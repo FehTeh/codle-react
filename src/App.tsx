@@ -8,24 +8,16 @@ import {
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
-  WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
-  HARD_MODE_ALERT_MESSAGE,
 } from './constants/strings'
 import {
-  MAX_WORD_LENGTH,
+  MAX_CODE_LENGTH,
   MAX_CHALLENGES,
   REVEAL_TIME_MS,
   GAME_LOST_INFO_DELAY,
   WELCOME_INFO_MODAL_MS,
 } from './constants/settings'
-import {
-  isWordInWordList,
-  isWinningWord,
-  solution,
-  findFirstUnusedReveal,
-  unicodeLength,
-} from './lib/words'
+import { isWinningWord, solution, codeLength } from './lib/codes'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
   loadGameStateFromLocalStorage,
@@ -33,7 +25,6 @@ import {
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
 } from './lib/localStorage'
-import { default as GraphemeSplitter } from 'grapheme-splitter'
 
 import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
@@ -85,12 +76,6 @@ function App() {
 
   const [stats, setStats] = useState(() => loadStats())
 
-  const [isHardMode, setIsHardMode] = useState(
-    localStorage.getItem('gameMode')
-      ? localStorage.getItem('gameMode') === 'hard'
-      : false
-  )
-
   useEffect(() => {
     // if no game state on load,
     // show the user the how-to info modal
@@ -120,15 +105,6 @@ function App() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }
 
-  const handleHardMode = (isHard: boolean) => {
-    if (guesses.length === 0 || localStorage.getItem('gameMode') === 'hard') {
-      setIsHardMode(isHard)
-      localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
-    } else {
-      showErrorAlert(HARD_MODE_ALERT_MESSAGE)
-    }
-  }
-
   const handleHighContrastMode = (isHighContrast: boolean) => {
     setIsHighContrastMode(isHighContrast)
     setStoredIsHighContrastMode(isHighContrast)
@@ -146,7 +122,7 @@ function App() {
     if (isGameWon) {
       const winMessage =
         WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
-      const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
+      const delayMs = REVEAL_TIME_MS * MAX_CODE_LENGTH
 
       showSuccessAlert(winMessage, {
         delayMs,
@@ -163,7 +139,7 @@ function App() {
 
   const onChar = (value: string) => {
     if (
-      unicodeLength(`${currentGuess}${value}`) <= MAX_WORD_LENGTH &&
+      codeLength(`${currentGuess}${value}`) <= MAX_CODE_LENGTH &&
       guesses.length < MAX_CHALLENGES &&
       !isGameWon
     ) {
@@ -172,9 +148,7 @@ function App() {
   }
 
   const onDelete = () => {
-    setCurrentGuess(
-      new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join('')
-    )
+    setCurrentGuess(currentGuess.split('').slice(0, -1).join(''))
   }
 
   const onEnter = () => {
@@ -182,29 +156,11 @@ function App() {
       return
     }
 
-    if (!(unicodeLength(currentGuess) === MAX_WORD_LENGTH)) {
+    if (!(codeLength(currentGuess) === MAX_CODE_LENGTH)) {
       setCurrentRowClass('jiggle')
       return showErrorAlert(NOT_ENOUGH_LETTERS_MESSAGE, {
         onClose: clearCurrentRowClass,
       })
-    }
-
-    if (!isWordInWordList(currentGuess)) {
-      setCurrentRowClass('jiggle')
-      return showErrorAlert(WORD_NOT_FOUND_MESSAGE, {
-        onClose: clearCurrentRowClass,
-      })
-    }
-
-    // enforce hard mode - all guesses must contain all previously revealed letters
-    if (isHardMode) {
-      const firstMissingReveal = findFirstUnusedReveal(currentGuess, guesses)
-      if (firstMissingReveal) {
-        setCurrentRowClass('jiggle')
-        return showErrorAlert(firstMissingReveal, {
-          onClose: clearCurrentRowClass,
-        })
-      }
     }
 
     setIsRevealing(true)
@@ -212,12 +168,12 @@ function App() {
     // chars have been revealed
     setTimeout(() => {
       setIsRevealing(false)
-    }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
+    }, REVEAL_TIME_MS * MAX_CODE_LENGTH)
 
     const winningWord = isWinningWord(currentGuess)
 
     if (
-      unicodeLength(currentGuess) === MAX_WORD_LENGTH &&
+      codeLength(currentGuess) === MAX_CODE_LENGTH &&
       guesses.length < MAX_CHALLENGES &&
       !isGameWon
     ) {
@@ -234,7 +190,7 @@ function App() {
         setIsGameLost(true)
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
           persist: true,
-          delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
+          delayMs: REVEAL_TIME_MS * MAX_CODE_LENGTH + 1,
         })
       }
     }
@@ -260,7 +216,6 @@ function App() {
           onChar={onChar}
           onDelete={onDelete}
           onEnter={onEnter}
-          guesses={guesses}
           isRevealing={isRevealing}
         />
         <InfoModal
@@ -275,7 +230,6 @@ function App() {
           isGameLost={isGameLost}
           isGameWon={isGameWon}
           handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
-          isHardMode={isHardMode}
           isDarkMode={isDarkMode}
           isHighContrastMode={isHighContrastMode}
           numberOfGuessesMade={guesses.length}
@@ -283,8 +237,6 @@ function App() {
         <SettingsModal
           isOpen={isSettingsModalOpen}
           handleClose={() => setIsSettingsModalOpen(false)}
-          isHardMode={isHardMode}
-          handleHardMode={handleHardMode}
           isDarkMode={isDarkMode}
           handleDarkMode={handleDarkMode}
           isHighContrastMode={isHighContrastMode}

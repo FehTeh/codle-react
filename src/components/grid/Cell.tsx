@@ -4,7 +4,7 @@ import { REVEAL_TIME_MS } from '../../constants/settings'
 import { getStoredIsHighContrastMode } from '../../lib/localStorage'
 
 type Props = {
-  value?: string
+  value?: number
   status?: CharStatus
   isRevealing?: boolean
   isCompleted?: boolean

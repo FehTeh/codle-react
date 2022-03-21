@@ -18,43 +18,43 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="W"
+          value={2}
           status="correct"
         />
-        <Cell value="E" />
-        <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="Y" />
+        <Cell value={6} />
+        <Cell value={1} />
+        <Cell value={9} />
+        <Cell value={5} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
+        The number 2 is in the correct spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="I" />
+        <Cell value={2} />
+        <Cell value={1} />
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="L"
+          value={5}
           status="present"
         />
-        <Cell value="O" />
-        <Cell value="T" />
+        <Cell value={7} />
+        <Cell value={1} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
+        The number 1 is closer to the correct value.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="V" />
-        <Cell value="A" />
-        <Cell value="G" />
-        <Cell isRevealing={true} isCompleted={true} value="U" status="absent" />
-        <Cell value="E" />
+        <Cell value={1} />
+        <Cell value={3} />
+        <Cell value={8} />
+        <Cell isRevealing={true} isCompleted={true} value={2} status="absent" />
+        <Cell value={5} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
+        The number 2 way too far from the correct.
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
