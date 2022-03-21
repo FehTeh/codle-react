@@ -36,6 +36,16 @@ export const SettingsModal = ({
           description={HIGH_CONTRAST_MODE_DESCRIPTION}
         />
       </div>
+      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+        This is an open source version of the word guessing game we all know and
+        love -{' '}
+        <a
+          href="https://github.com/fehteh/codle-react"
+          className="underline font-bold"
+        >
+          check out the code here
+        </a>{' '}
+      </p>
     </BaseModal>
   )
 }

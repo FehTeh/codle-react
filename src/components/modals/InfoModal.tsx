@@ -37,7 +37,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           isRevealing={true}
           isCompleted={true}
           value={5}
-          status="present"
+          status="near"
         />
         <Cell value={7} />
         <Cell value={1} />
@@ -50,7 +50,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value={1} />
         <Cell value={3} />
         <Cell value={8} />
-        <Cell isRevealing={true} isCompleted={true} value={2} status="absent" />
+        <Cell isRevealing={true} isCompleted={true} value={2} status="far" />
         <Cell value={5} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
@@ -58,14 +58,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is an open source version of the word guessing game we all know and
-        love -{' '}
-        <a
-          href="https://github.com/cwackerfuss/react-wordle"
-          className="underline font-bold"
-        >
-          check out the code here
-        </a>{' '}
+        There is available one hit per column in the info icon.
       </p>
     </BaseModal>
   )

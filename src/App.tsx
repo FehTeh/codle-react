@@ -8,7 +8,7 @@ import {
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
-  CORRECT_WORD_MESSAGE,
+  CORRECT_CODE_MESSAGE,
 } from './constants/strings'
 import {
   MAX_CODE_LENGTH,
@@ -30,6 +30,7 @@ import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
+import { HitsModal } from './components/modals/HitsModal'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -41,6 +42,7 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
+  const [isHitsModalOpen, setIsHitsModalOpen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
@@ -67,7 +69,7 @@ function App() {
     }
     if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
       setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+      showErrorAlert(CORRECT_CODE_MESSAGE(solution), {
         persist: true,
       })
     }
@@ -188,7 +190,7 @@ function App() {
       if (guesses.length === MAX_CHALLENGES - 1) {
         setStats(addStatsForCompletedGame(stats, guesses.length + 1))
         setIsGameLost(true)
-        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+        showErrorAlert(CORRECT_CODE_MESSAGE(solution), {
           persist: true,
           delayMs: REVEAL_TIME_MS * MAX_CODE_LENGTH + 1,
         })
@@ -199,6 +201,7 @@ function App() {
   return (
     <div className="h-screen flex flex-col">
       <Navbar
+        setIsHitsModalOpen={setIsHitsModalOpen}
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
@@ -221,6 +224,10 @@ function App() {
         <InfoModal
           isOpen={isInfoModalOpen}
           handleClose={() => setIsInfoModalOpen(false)}
+        />
+        <HitsModal
+          isOpen={isHitsModalOpen}
+          handleClose={() => setIsHitsModalOpen(false)}
         />
         <StatsModal
           isOpen={isStatsModalOpen}
