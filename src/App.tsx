@@ -17,7 +17,13 @@ import {
   GAME_LOST_INFO_DELAY,
   WELCOME_INFO_MODAL_MS,
 } from './constants/settings'
-import { isWinningWord, solution, codeLength } from './lib/codes'
+import {
+  isWinningWord,
+  solution,
+  codeLength,
+  getHint,
+  hints,
+} from './lib/codes'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
   loadGameStateFromLocalStorage,
@@ -214,6 +220,13 @@ function App() {
             isRevealing={isRevealing}
             currentRowClassName={currentRowClass}
           />
+          {!isGameWon && !isGameLost && currentGuess.length < MAX_CODE_LENGTH && (
+            <div className="flex justify-center mb-1">
+              <p className="mx-0.5 text-2xl font-bold dark:text-white correct shadowed">
+                {getHint(hints[currentGuess.length], currentGuess.length)}
+              </p>
+            </div>
+          )}
         </div>
         <Keyboard
           onChar={onChar}
