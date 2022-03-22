@@ -17,15 +17,15 @@ export const SUCCESS_RATE_TEXT = 'Success rate'
 export const CURRENT_STREAK_TEXT = 'Current streak'
 export const BEST_STREAK_TEXT = 'Best streak'
 
-export const HIT_ODD = (position: string) => `${position} is odd`;
-export const HIT_EVEN = (position: string) => `${position} is even`;
-export const HIT_GREATER_THAN = (positionX: string, positionY: string) => `${positionX} is greater than ${positionY}`;
-export const HIT_LESS_THAN = (positionX: string, positionY: string) => `${positionX} is less than ${positionY}`;
-export const HIT_EQUALS_TO = (positionX: string, positionY: string) => `${positionX} is equals to ${positionY}`;
-export const HIT_MULTIPLE_OF = (position: string, multiple: number) => `${position} is multiple of ${multiple}`;
-export const HIT_NOT_MULTIPLE_OF = (position: string, multiple: number) => `${position} is not multiple of ${multiple}`;
-export const HIT_PRIME = (position: string) => `${position} is prime`;
-export const HIT_NOT_PRIME = (position: string) => `${position} is not prime`;
-export const HIT_FIBONACCI = (position: string) => `${position} is part of fibonacci sequence`;
-export const HIT_NOT_FIBONACCI = (position: string) => `${position} is not part of fibonacci sequence`;
-export const HIT_CALC = (positionX: string, positionY: string, operation:string, result: number) => `${positionX} ${operation} ${positionY} = ${result}`;
+export const HINT_ODD = (position: string) => `${position} is odd`;
+export const HINT_EVEN = (position: string) => `${position} is even`;
+export const HINT_GREATER_THAN = (positionX: string, positionY: string) => `${positionX} is greater than ${positionY}`;
+export const HINT_LESS_THAN = (positionX: string, positionY: string) => `${positionX} is less than ${positionY}`;
+export const HINT_EQUALS_TO = (positionX: string, positionY: string) => `${positionX} is equals to ${positionY}`;
+export const HINT_MULTIPLE_OF = (position: string, multiple: number) => `${position} is multiple of ${multiple}`;
+export const HINT_NOT_MULTIPLE_OF = (position: string, multiple: number) => `${position} is not multiple of ${multiple}`;
+export const HINT_PRIME = (position: string) => `${position} is prime`;
+export const HINT_NOT_PRIME = (position: string) => `${position} is not prime`;
+export const HINT_FIBONACCI = (position: string) => `${position} is part of fibonacci sequence`;
+export const HINT_NOT_FIBONACCI = (position: string) => `${position} is not part of fibonacci sequence`;
+export const HINT_CALC = (positionX: string, positionY: string, operation:string, result: number) => `${positionX} ${operation} ${positionY} = ${result}`;

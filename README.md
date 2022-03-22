@@ -1,6 +1,6 @@
 # Codle React - [Forked from react-wordle](https://github.com/cwackerfuss/react-wordle)
 
-This is based on the famous Wordle game but the objective is to find a daily code with one hit per column.
+This is based on the famous Wordle game but the objective is to find a daily code with one hint per column.
 Made using React, Typescript, and Tailwind.
 
 [**Try it!**](https://codle.netlify.app/)

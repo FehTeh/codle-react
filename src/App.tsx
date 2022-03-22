@@ -30,7 +30,7 @@ import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
-import { HitsModal } from './components/modals/HitsModal'
+import { HintsModal } from './components/modals/HintsModal'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -42,7 +42,7 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
-  const [isHitsModalOpen, setIsHitsModalOpen] = useState(false)
+  const [isHintsModalOpen, setIsHintsModalOpen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
@@ -201,7 +201,7 @@ function App() {
   return (
     <div className="h-screen flex flex-col">
       <Navbar
-        setIsHitsModalOpen={setIsHitsModalOpen}
+        setIsHintsModalOpen={setIsHintsModalOpen}
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
@@ -225,9 +225,9 @@ function App() {
           isOpen={isInfoModalOpen}
           handleClose={() => setIsInfoModalOpen(false)}
         />
-        <HitsModal
-          isOpen={isHitsModalOpen}
-          handleClose={() => setIsHitsModalOpen(false)}
+        <HintsModal
+          isOpen={isHintsModalOpen}
+          handleClose={() => setIsHintsModalOpen(false)}
         />
         <StatsModal
           isOpen={isStatsModalOpen}

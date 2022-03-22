@@ -1,22 +1,22 @@
 import { BaseModal } from './BaseModal'
-import { getHit, hits } from '../../lib/codes'
+import { getHint, hints } from '../../lib/codes'
 
 type Props = {
   isOpen: boolean
   handleClose: () => void
 }
 
-export const HitsModal = ({ isOpen, handleClose }: Props) => {
+export const HintsModal = ({ isOpen, handleClose }: Props) => {
 
   return (
-    <BaseModal title="Hits" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="Hints" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        These are the hits to crack the code:
+        These are the hints to crack the code:
       </p>
       <br></br>
-      {hits.map((hit, i) => (
+      {hints.map((hint, i) => (
         <p className="text-sm text-gray-500 dark:text-gray-300">
-          {getHit(hit, i)}
+          {getHint(hint, i)}
         </p>
       ))}
     </BaseModal>

@@ -58,7 +58,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        There is available one hit per column in the info icon.
+        There is available one hint per column in the info icon.
       </p>
     </BaseModal>
   )
