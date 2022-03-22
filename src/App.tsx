@@ -17,13 +17,7 @@ import {
   GAME_LOST_INFO_DELAY,
   WELCOME_INFO_MODAL_MS,
 } from './constants/settings'
-import {
-  isWinningWord,
-  solution,
-  codeLength,
-  getHint,
-  hints,
-} from './lib/codes'
+import { isWinningWord, solution, codeLength } from './lib/codes'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
   loadGameStateFromLocalStorage,
@@ -205,66 +199,59 @@ function App() {
   }
 
   return (
-    <div className="h-screen flex flex-col">
+    <>
       <Navbar
         setIsHintsModalOpen={setIsHintsModalOpen}
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
       />
-      <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
-        <div className="pb-6 grow">
-          <Grid
-            guesses={guesses}
-            currentGuess={currentGuess}
-            isRevealing={isRevealing}
-            currentRowClassName={currentRowClass}
-          />
-          {!isGameWon && !isGameLost && currentGuess.length < MAX_CODE_LENGTH && (
-            <div className="flex justify-center mb-1">
-              <p className="mx-0.5 text-2xl font-bold dark:text-white correct shadowed">
-                {getHint(hints[currentGuess.length], currentGuess.length)}
-              </p>
-            </div>
-          )}
-        </div>
-        <Keyboard
-          onChar={onChar}
-          onDelete={onDelete}
-          onEnter={onEnter}
-          isRevealing={isRevealing}
-        />
-        <InfoModal
-          isOpen={isInfoModalOpen}
-          handleClose={() => setIsInfoModalOpen(false)}
-        />
-        <HintsModal
-          isOpen={isHintsModalOpen}
-          handleClose={() => setIsHintsModalOpen(false)}
-        />
-        <StatsModal
-          isOpen={isStatsModalOpen}
-          handleClose={() => setIsStatsModalOpen(false)}
-          guesses={guesses}
-          gameStats={stats}
-          isGameLost={isGameLost}
-          isGameWon={isGameWon}
-          handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
-          isDarkMode={isDarkMode}
-          isHighContrastMode={isHighContrastMode}
-          numberOfGuessesMade={guesses.length}
-        />
-        <SettingsModal
-          isOpen={isSettingsModalOpen}
-          handleClose={() => setIsSettingsModalOpen(false)}
-          isDarkMode={isDarkMode}
-          handleDarkMode={handleDarkMode}
-          isHighContrastMode={isHighContrastMode}
-          handleHighContrastMode={handleHighContrastMode}
-        />
-        <AlertContainer />
-      </div>
-    </div>
+      <Grid
+        guesses={guesses}
+        currentGuess={currentGuess}
+        isRevealing={isRevealing}
+        currentRowClassName={currentRowClass}
+        showHint={
+          !isGameWon && !isGameLost && currentGuess.length < MAX_CODE_LENGTH
+        }
+      />
+      <Keyboard
+        onChar={onChar}
+        onDelete={onDelete}
+        onEnter={onEnter}
+        isRevealing={isRevealing}
+      />
+
+      <InfoModal
+        isOpen={isInfoModalOpen}
+        handleClose={() => setIsInfoModalOpen(false)}
+      />
+      <HintsModal
+        isOpen={isHintsModalOpen}
+        handleClose={() => setIsHintsModalOpen(false)}
+      />
+      <StatsModal
+        isOpen={isStatsModalOpen}
+        handleClose={() => setIsStatsModalOpen(false)}
+        guesses={guesses}
+        gameStats={stats}
+        isGameLost={isGameLost}
+        isGameWon={isGameWon}
+        handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+        isDarkMode={isDarkMode}
+        isHighContrastMode={isHighContrastMode}
+        numberOfGuessesMade={guesses.length}
+      />
+      <SettingsModal
+        isOpen={isSettingsModalOpen}
+        handleClose={() => setIsSettingsModalOpen(false)}
+        isDarkMode={isDarkMode}
+        handleDarkMode={handleDarkMode}
+        isHighContrastMode={isHighContrastMode}
+        handleHighContrastMode={handleHighContrastMode}
+      />
+      <AlertContainer />
+    </>
   )
 }
 

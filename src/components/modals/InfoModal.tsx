@@ -27,7 +27,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value={5} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The number 2 is in the correct spot.
+        The number 2 is in the code and in the correct spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -37,24 +37,24 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           isRevealing={true}
           isCompleted={true}
           value={5}
-          status="near"
+          status="present"
         />
         <Cell value={7} />
         <Cell value={1} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The number 5 is closer to the correct value.
+        The number 5 is in the code but in the wrong spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
         <Cell value={1} />
         <Cell value={3} />
         <Cell value={8} />
-        <Cell isRevealing={true} isCompleted={true} value={2} status="far" />
+        <Cell isRevealing={true} isCompleted={true} value={2} status="absent" />
         <Cell value={5} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The number 2 way too far from the correct.
+        The number 2 is not in the code in any spot.
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">

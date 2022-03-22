@@ -52,7 +52,7 @@ export const generateEmojiGrid = (guesses: string[], tiles: string[]) => {
           switch (status[i]) {
             case 'correct':
               return tiles[0]
-            case 'near':
+            case 'present':
               return tiles[1]
             default:
               return tiles[2]
