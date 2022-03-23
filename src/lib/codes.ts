@@ -28,7 +28,7 @@ export const codeLength = (code: string) => {
 
 export const getHint = (hint: number, position:number) => {
   let solutionSplit = splitIntoNumbers(solution);
-  const positionCompare = position + 1 === (MAX_CODE_LENGTH - 1) ? 0 : position + 1
+  const positionCompare = position + 1 === MAX_CODE_LENGTH ? 0 : position + 1
   const letter = String.fromCharCode(65 + position);
   const letterCompare = String.fromCharCode(65 + positionCompare);
 
