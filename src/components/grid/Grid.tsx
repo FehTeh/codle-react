@@ -1,5 +1,5 @@
 import { MAX_CHALLENGES } from '../../constants/settings'
-import { getHint, hints } from '../../lib/codes'
+import { getHint } from '../../lib/codes'
 import { CompletedRow } from './CompletedRow'
 import { CurrentRow } from './CurrentRow'
 import { EmptyRow } from './EmptyRow'
@@ -46,7 +46,7 @@ export const Grid = ({
       {showHint && (
         <div className="flex justify-center mb-1">
           <p className="mx-0.5 text-2xl font-bold dark:text-white correct shadowed">
-            {getHint(hints[currentGuess.length], currentGuess.length)}
+            {getHint(currentGuess.length)}
           </p>
         </div>
       )}

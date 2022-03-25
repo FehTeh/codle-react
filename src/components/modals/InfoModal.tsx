@@ -1,3 +1,4 @@
+import { localized } from '../../lib/localize'
 import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
 
@@ -8,10 +9,9 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title={localized['app.infomodal.title']} isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the code in 6 tries. After each guess, the color of the tiles will
-        change to show how close your guess was to the code.
+        { localized['app.infomodal.info'] }
       </p>
 
       <div className="flex justify-center mb-1 mt-4">

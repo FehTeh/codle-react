@@ -45,6 +45,12 @@ export const StatsModal = ({
         handleClose={handleClose}
       >
         <StatBar gameStats={gameStats} />
+        <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+          If you like my work please feel free to buy me a coffee
+          <a className="buymeacoffee" href="https://www.buymeacoffee.com/fehteh" target="_blank" rel="noreferrer">
+            <img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee"/>
+          </a>
+        </p>
       </BaseModal>
     )
   }
@@ -89,6 +95,12 @@ export const StatsModal = ({
           </button>
         </div>
       )}
+      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+        If you like my work please feel free to buy me a coffee
+        <a className="buymeacoffee" href="https://www.buymeacoffee.com/fehteh" target="_blank" rel="noreferrer">
+          <img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee"/>
+        </a>
+      </p>
     </BaseModal>
   )
 }

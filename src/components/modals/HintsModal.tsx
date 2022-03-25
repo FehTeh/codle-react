@@ -14,9 +14,9 @@ export const HintsModal = ({ isOpen, handleClose }: Props) => {
         These are the hints to crack the code:
       </p>
       <br></br>
-      {hints.map((hint, i) => (
-        <p className="text-sm text-gray-500 dark:text-gray-300">
-          {getHint(hint, i)}
+      {hints.map((_, i) => (
+        <p key={i} className="text-sm text-gray-500 dark:text-gray-300">
+          {getHint(i)}
         </p>
       ))}
     </BaseModal>

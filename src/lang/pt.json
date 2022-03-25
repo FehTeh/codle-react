@@ -1,0 +1,10 @@
+{
+    "app.infomodal.title": "Como jogar",
+    "app.infomodal.info": "Adivinhar o codigo em 6 tentativas. Depois de cada tentativa, a cor dos quadrados mudará para mostrar quão perto estás da solução.",
+    "app.settingsmodal.title": "Definições",
+    "app.settingsmodal.darkmode": "Tema escuro",
+    "app.settingsmodal.highcontrast": "Modo Daltónico",
+    "app.settingsmodal.highcontrastinfo": "Cores de alto contraste",
+    "app.settingsmodal.opensourceinfo": "Isto é uma versão open source do jogo de adivinha de palavras que todos conhecemos e adoramos",
+    "app.settingsmodal.checkcode": "codigo disponivel aqui"
+}

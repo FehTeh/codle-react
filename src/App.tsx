@@ -31,11 +31,18 @@ import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
 import { HintsModal } from './components/modals/HintsModal'
+import { localized } from './lib/localize'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches
+
+  const [lang, setLang] = useState(
+    localStorage.getItem('lang')
+      ? (localStorage.getItem('lang') as string)
+      : localized.getInterfaceLanguage()
+  )
 
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
     useAlert()
@@ -101,6 +108,12 @@ function App() {
       document.documentElement.classList.remove('high-contrast')
     }
   }, [isDarkMode, isHighContrastMode])
+
+  const handleLangChange = (lang: string) => {
+    localized.setLanguage(lang)
+    setLang(lang)
+    localStorage.setItem('lang', lang)
+  }
 
   const handleDarkMode = (isDark: boolean) => {
     setIsDarkMode(isDark)
@@ -249,6 +262,8 @@ function App() {
         handleDarkMode={handleDarkMode}
         isHighContrastMode={isHighContrastMode}
         handleHighContrastMode={handleHighContrastMode}
+        locale={lang}
+        handleLangChange={handleLangChange}
       />
       <AlertContainer />
     </>

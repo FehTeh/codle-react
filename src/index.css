@@ -229,3 +229,11 @@ svg.cursor-pointer:hover {
     transform: translate(0, 0);
   }
 }
+
+.buymeacoffee {
+  display: block;
+}
+
+.buymeacoffee img {
+  display: inline-block;
+}

@@ -26,13 +26,13 @@ export const codeLength = (code: string) => {
   return splitIntoNumbers(code).length
 }
 
-export const getHint = (hint: number, position:number) => {
+export const getHint = (position:number) => {
   let solutionSplit = splitIntoNumbers(solution);
   const positionCompare = position + 1 === MAX_CODE_LENGTH ? 0 : position + 1
   const letter = String.fromCharCode(65 + position);
   const letterCompare = String.fromCharCode(65 + positionCompare);
 
-  switch(hint) {
+  switch(hints[position]) {
     case 1: { // x ><= y
       if(solutionSplit[position] > solutionSplit[positionCompare]){
         return HINT_GREATER_THAN(letter, letterCompare);

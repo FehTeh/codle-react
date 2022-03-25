@@ -1,8 +1,6 @@
 import { BaseModal } from './BaseModal'
 import { SettingsToggle } from './SettingsToggle'
-import {
-  HIGH_CONTRAST_MODE_DESCRIPTION,
-} from '../../constants/strings'
+import { localized } from '../../lib/localize'
 
 type Props = {
   isOpen: boolean
@@ -11,6 +9,8 @@ type Props = {
   handleDarkMode: Function
   isHighContrastMode: boolean
   handleHighContrastMode: Function
+  locale: string
+  handleLangChange: Function
 }
 
 export const SettingsModal = ({
@@ -20,30 +20,35 @@ export const SettingsModal = ({
   handleDarkMode,
   isHighContrastMode,
   handleHighContrastMode,
+  locale,
+  handleLangChange
 }: Props) => {
   return (
-    <BaseModal title="Settings" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title={localized['app.settingsmodal.title']} isOpen={isOpen} handleClose={handleClose}>
       <div className="flex flex-col mt-2 divide-y">
         <SettingsToggle
-          settingName="Dark Mode"
+          settingName={localized['app.settingsmodal.darkmode']}
           flag={isDarkMode}
           handleFlag={handleDarkMode}
         />
         <SettingsToggle
-          settingName="High Contrast Mode"
+          settingName={localized['app.settingsmodal.highcontrast']}
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
-          description={HIGH_CONTRAST_MODE_DESCRIPTION}
+          description={localized['app.settingsmodal.highcontrastinfo']}
         />
+        <select value={locale} onChange={(event) => handleLangChange(event.target.value)}>
+          <option value='pt'>Português</option>
+          <option value='en'>English</option>
+        </select>
       </div>
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is an open source version of the word guessing game we all know and
-        love -{' '}
+        {localized['app.settingsmodal.opensourceinfo']} -{' '}
         <a
           href="https://github.com/fehteh/codle-react"
           className="underline font-bold"
         >
-          check out the code here
+          {localized['app.settingsmodal.checkcode']}
         </a>{' '}
       </p>
     </BaseModal>
