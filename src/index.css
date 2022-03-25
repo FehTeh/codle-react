@@ -101,7 +101,7 @@ svg.cursor-pointer:hover {
 .game {
   position: absolute;
   top: 3.5rem;
-  bottom: 4.5rem;
+  bottom: 9.5rem;
   left: 0;
   right: 0;
 }
@@ -236,4 +236,28 @@ svg.cursor-pointer:hover {
 
 .buymeacoffee img {
   display: inline-block;
+}
+
+@media (max-height: 650px) {
+  .game {
+    transition: all 1s;
+    transform: scale(0.9);
+    transform-origin: top;
+  }
+}
+
+@media (max-height: 600px) {
+  .game {
+    transition: all 1s;
+    transform: scale(0.85);
+    transform-origin: top;
+  }
+}
+
+@media (max-height: 550px) {
+  .game {
+    transition: all 1s;
+    transform: scale(0.8);
+    transform-origin: top;
+  }
 }
