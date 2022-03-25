@@ -254,10 +254,18 @@ svg.cursor-pointer:hover {
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 570px) {
   .game {
     transition: all 1s;
     transform: scale(0.8);
+    transform-origin: top;
+  }
+}
+
+@media (max-height: 540px) {
+  .game {
+    transition: all 1s;
+    transform: scale(0.75);
     transform-origin: top;
   }
 }
