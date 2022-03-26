@@ -13,5 +13,7 @@
     "app.settingsmodal.highcontrastinfo": "For improved color vision",
     "app.settingsmodal.opensourceinfo": "This is an open source version of the word guessing game we all know and love",
     "app.settingsmodal.checkcode": "check out the code here",
-    "app.statsmodal.title": "Statistics"
+    "app.statsmodal.title": "Statistics",
+    "app.statsmodal.guessdistribution": "Guess Distribution",
+    "app.statsmodal.newcode" : "New code in"
 }

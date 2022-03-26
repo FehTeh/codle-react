@@ -13,5 +13,7 @@
     "app.settingsmodal.highcontrastinfo": "Cores de alto contraste",
     "app.settingsmodal.opensourceinfo": "Isto é uma versão open source do jogo de adivinha de palavras que todos conhecemos e adoramos",
     "app.settingsmodal.checkcode": "codigo disponivel aqui",
-    "app.statsmodal.title": "Estatisticas"
+    "app.statsmodal.title": "Estatisticas",
+    "app.statsmodal.guessdistribution": "Distribuição de adivinhas",
+    "app.statsmodal.newcode" : "Novo codigo em"   
 }

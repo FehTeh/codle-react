@@ -6,8 +6,6 @@ import { shareStatus } from '../../lib/share'
 import { tomorrow } from '../../lib/codes'
 import { BaseModal } from './BaseModal'
 import {
-  GUESS_DISTRIBUTION_TEXT,
-  NEW_CODE_TEXT,
   SHARE_TEXT,
 } from '../../constants/strings'
 import { localized } from '../../lib/localize'
@@ -62,7 +60,7 @@ export const StatsModal = ({
     >
       <StatBar gameStats={gameStats} />
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
-        {GUESS_DISTRIBUTION_TEXT}
+        {localized['app.statsmodal.guessdistribution']}
       </h4>
       <Histogram
         gameStats={gameStats}
@@ -71,7 +69,7 @@ export const StatsModal = ({
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
           <div>
-            <h5>{NEW_CODE_TEXT}</h5>
+            <h5>{localized['app.statsmodal.newcode']}</h5>
             <Countdown
               className="text-lg font-medium text-gray-900 dark:text-gray-100"
               date={tomorrow}

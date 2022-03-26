@@ -6,8 +6,6 @@ export const NOT_ENOUGH_LETTERS_MESSAGE = 'Not enough letters'
 export const CORRECT_CODE_MESSAGE = (solution: string) =>
   `The code was ${solution}`
 export const ENTER_TEXT = 'Enter'
-export const GUESS_DISTRIBUTION_TEXT = 'Guess Distribution'
-export const NEW_CODE_TEXT = 'New code in'
 export const SHARE_TEXT = 'Share'
 export const TOTAL_TRIES_TEXT = 'Total tries'
 export const SUCCESS_RATE_TEXT = 'Success rate'

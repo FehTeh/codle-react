@@ -32,6 +32,7 @@ import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
 import { HintsModal } from './components/modals/HintsModal'
 import { localized } from './lib/localize'
+import { Fireworks } from 'fireworks-js/dist/react'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -266,6 +267,7 @@ function App() {
         handleLangChange={handleLangChange}
       />
       <AlertContainer />
+      {isGameWon && <Fireworks className="firework" />}
     </>
   )
 }
