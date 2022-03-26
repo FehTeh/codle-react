@@ -1,10 +1,17 @@
 {
     "app.infomodal.title": "Como jogar",
     "app.infomodal.info": "Adivinhar o codigo em 6 tentativas. Depois de cada tentativa, a cor dos quadrados mudará para mostrar quão perto estás da solução.",
+    "app.infomodal.correct": "O número 2 existe no codigo e está na posição correcta.",
+    "app.infomodal.present": "O número 5 existe no codigo mas está na posição errada.",
+    "app.infomodal.absent": "O número 7 não existe no codigo em nenhuma posição.",
+    "app.infomodal.hint": "Existe uma ajuda por coluna no icone de informação.",
+    "app.hintsmodal.title": "Ajudas",
+    "app.hintsmodal.info": "Estas são as ajudas para desvendar o codigo:",
     "app.settingsmodal.title": "Definições",
     "app.settingsmodal.darkmode": "Tema escuro",
     "app.settingsmodal.highcontrast": "Modo Daltónico",
     "app.settingsmodal.highcontrastinfo": "Cores de alto contraste",
     "app.settingsmodal.opensourceinfo": "Isto é uma versão open source do jogo de adivinha de palavras que todos conhecemos e adoramos",
-    "app.settingsmodal.checkcode": "codigo disponivel aqui"
+    "app.settingsmodal.checkcode": "codigo disponivel aqui",
+    "app.statsmodal.title": "Estatisticas"
 }

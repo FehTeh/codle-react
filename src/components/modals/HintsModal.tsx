@@ -1,5 +1,6 @@
 import { BaseModal } from './BaseModal'
 import { getHint, hints } from '../../lib/codes'
+import { localized } from '../../lib/localize'
 
 type Props = {
   isOpen: boolean
@@ -9,9 +10,9 @@ type Props = {
 export const HintsModal = ({ isOpen, handleClose }: Props) => {
 
   return (
-    <BaseModal title="Hints" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title={localized['app.hintsmodal.title']} isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        These are the hints to crack the code:
+        {localized['app.hintsmodal.info']}
       </p>
       <br></br>
       {hints.map((_, i) => (

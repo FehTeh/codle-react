@@ -11,7 +11,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title={localized['app.infomodal.title']} isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        { localized['app.infomodal.info'] }
+        {localized['app.infomodal.info']}
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -27,7 +27,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value={5} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The number 2 is in the code and in the correct spot.
+        {localized['app.infomodal.correct']}
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -43,18 +43,18 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value={1} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The number 5 is in the code but in the wrong spot.
+        {localized['app.infomodal.present']}
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
         <Cell value={1} />
         <Cell value={3} />
         <Cell value={8} />
-        <Cell isRevealing={true} isCompleted={true} value={2} status="absent" />
+        <Cell isRevealing={true} isCompleted={true} value={7} status="absent" />
         <Cell value={5} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The number 2 is not in the code in any spot.
+        {localized['app.infomodal.absent']}
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">

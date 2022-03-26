@@ -1,10 +1,17 @@
 {
     "app.infomodal.title": "How to play",
     "app.infomodal.info": "Guess the code in 6 tries. After each guess, the color of the tiles will change to show how close your guess was to the code.",
+    "app.infomodal.correct": "The number 2 is in the code and in the correct spot.",
+    "app.infomodal.present": "The number 5 is in the code but in the wrong spot.",
+    "app.infomodal.absent": "The number 7 is not in the code in any spot.",
+    "app.infomodal.hint": "There is available one hint per column in the info icon.",
+    "app.hintsmodal.title": "Hints",
+    "app.hintsmodal.info": "These are the hints to crack the code:",
     "app.settingsmodal.title": "Settings",
     "app.settingsmodal.darkmode": "Dark Mode",
     "app.settingsmodal.highcontrast": "High Contrast Mode",
     "app.settingsmodal.highcontrastinfo": "For improved color vision",
     "app.settingsmodal.opensourceinfo": "This is an open source version of the word guessing game we all know and love",
-    "app.settingsmodal.checkcode": "check out the code here"
+    "app.settingsmodal.checkcode": "check out the code here",
+    "app.statsmodal.title": "Statistics"
 }

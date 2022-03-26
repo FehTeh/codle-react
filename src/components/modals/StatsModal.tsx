@@ -6,11 +6,11 @@ import { shareStatus } from '../../lib/share'
 import { tomorrow } from '../../lib/codes'
 import { BaseModal } from './BaseModal'
 import {
-  STATISTICS_TITLE,
   GUESS_DISTRIBUTION_TEXT,
   NEW_CODE_TEXT,
   SHARE_TEXT,
 } from '../../constants/strings'
+import { localized } from '../../lib/localize'
 
 type Props = {
   isOpen: boolean
@@ -40,7 +40,7 @@ export const StatsModal = ({
   if (gameStats.totalGames <= 0) {
     return (
       <BaseModal
-        title={STATISTICS_TITLE}
+        title={localized['app.statsmodal.title']}
         isOpen={isOpen}
         handleClose={handleClose}
       >
@@ -56,7 +56,7 @@ export const StatsModal = ({
   }
   return (
     <BaseModal
-      title={STATISTICS_TITLE}
+      title={localized['app.statsmodal.title']}
       isOpen={isOpen}
       handleClose={handleClose}
     >
