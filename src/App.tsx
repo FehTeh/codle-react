@@ -229,12 +229,14 @@ function App() {
           !isGameWon && !isGameLost && currentGuess.length < MAX_CODE_LENGTH
         }
       />
-      <Keyboard
-        onChar={onChar}
-        onDelete={onDelete}
-        onEnter={onEnter}
-        isRevealing={isRevealing}
-      />
+      {!isGameWon && !isGameLost && (
+        <Keyboard
+          onChar={onChar}
+          onDelete={onDelete}
+          onEnter={onEnter}
+          isRevealing={isRevealing}
+        />
+      )}
 
       <InfoModal
         isOpen={isInfoModalOpen}

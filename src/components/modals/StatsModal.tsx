@@ -5,9 +5,6 @@ import { GameStats } from '../../lib/localStorage'
 import { shareStatus } from '../../lib/share'
 import { tomorrow } from '../../lib/codes'
 import { BaseModal } from './BaseModal'
-import {
-  SHARE_TEXT,
-} from '../../constants/strings'
 import { localized } from '../../lib/localize'
 
 type Props = {
@@ -44,7 +41,7 @@ export const StatsModal = ({
       >
         <StatBar gameStats={gameStats} />
         <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-          If you like my work please feel free to buy me a coffee
+          {localized['app.statsmodal.buymeacoffee']}
           <a className="buymeacoffee" href="https://www.buymeacoffee.com/fehteh" target="_blank" rel="noreferrer">
             <img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee"/>
           </a>
@@ -89,12 +86,12 @@ export const StatsModal = ({
               )
             }}
           >
-            {SHARE_TEXT}
+            {localized['app.statsmodal.share']}
           </button>
         </div>
       )}
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        If you like my work please feel free to buy me a coffee
+        {localized['app.statsmodal.buymeacoffee']}
         <a className="buymeacoffee" href="https://www.buymeacoffee.com/fehteh" target="_blank" rel="noreferrer">
           <img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee"/>
         </a>

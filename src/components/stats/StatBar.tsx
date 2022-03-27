@@ -1,10 +1,5 @@
 import { GameStats } from '../../lib/localStorage'
-import {
-  TOTAL_TRIES_TEXT,
-  SUCCESS_RATE_TEXT,
-  CURRENT_STREAK_TEXT,
-  BEST_STREAK_TEXT,
-} from '../../constants/strings'
+import { localized } from '../../lib/localize'
 
 type Props = {
   gameStats: GameStats
@@ -28,10 +23,10 @@ const StatItem = ({
 export const StatBar = ({ gameStats }: Props) => {
   return (
     <div className="flex justify-center my-2">
-      <StatItem label={TOTAL_TRIES_TEXT} value={gameStats.totalGames} />
-      <StatItem label={SUCCESS_RATE_TEXT} value={`${gameStats.successRate}%`} />
-      <StatItem label={CURRENT_STREAK_TEXT} value={gameStats.currentStreak} />
-      <StatItem label={BEST_STREAK_TEXT} value={gameStats.bestStreak} />
+      <StatItem label={localized['app.statsbar.totaltries']} value={gameStats.totalGames} />
+      <StatItem label={localized['app.statsbar.successrate']} value={`${gameStats.successRate}%`} />
+      <StatItem label={localized['app.statsbar.currentstreak']} value={gameStats.currentStreak} />
+      <StatItem label={localized['app.statsbar.beststreak']} value={gameStats.bestStreak} />
     </div>
   )
 }

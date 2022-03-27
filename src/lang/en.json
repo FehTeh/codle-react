@@ -14,6 +14,12 @@
     "app.settingsmodal.opensourceinfo": "This is an open source version of the word guessing game we all know and love",
     "app.settingsmodal.checkcode": "check out the code here",
     "app.statsmodal.title": "Statistics",
+    "app.statsmodal.buymeacoffee": "If you like this game please feel free to",
     "app.statsmodal.guessdistribution": "Guess Distribution",
-    "app.statsmodal.newcode" : "New code in"
+    "app.statsmodal.newcode" : "New code in",
+    "app.statsmodal.share" : "Share",
+    "app.statsbar.totaltries": "total tries",
+    "app.statsbar.successrate": "success rate",
+    "app.statsbar.currentstreak": "current streak",
+    "app.statsbar.beststreak": "best streak"
 }

@@ -14,6 +14,12 @@
     "app.settingsmodal.opensourceinfo": "Isto é uma versão open source do jogo de adivinha de palavras que todos conhecemos e adoramos",
     "app.settingsmodal.checkcode": "codigo disponivel aqui",
     "app.statsmodal.title": "Estatisticas",
+    "app.statsmodal.buymeacoffee": "Se gostas do jogo e quiseres contribuir",
     "app.statsmodal.guessdistribution": "Distribuição de adivinhas",
-    "app.statsmodal.newcode" : "Novo codigo em"   
+    "app.statsmodal.newcode" : "Novo codigo em",
+    "app.statsmodal.share" : "Partilhar",
+    "app.statsbar.totaltries": "jogos",
+    "app.statsbar.successrate": "de vitórias",
+    "app.statsbar.currentstreak": "sequencia de vitórias",
+    "app.statsbar.beststreak": "melhor sequência"
 }

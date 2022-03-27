@@ -6,11 +6,6 @@ export const NOT_ENOUGH_LETTERS_MESSAGE = 'Not enough letters'
 export const CORRECT_CODE_MESSAGE = (solution: string) =>
   `The code was ${solution}`
 export const ENTER_TEXT = 'Enter'
-export const SHARE_TEXT = 'Share'
-export const TOTAL_TRIES_TEXT = 'Total tries'
-export const SUCCESS_RATE_TEXT = 'Success rate'
-export const CURRENT_STREAK_TEXT = 'Current streak'
-export const BEST_STREAK_TEXT = 'Best streak'
 
 export const HINT_ODD = (position: string) => `${position} is a odd number`;
 export const HINT_EVEN = (position: string) => `${position} is a even number`;

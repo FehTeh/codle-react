@@ -277,4 +277,5 @@ svg.cursor-pointer:hover {
   height: 100%;
   position: fixed;
   z-index: -1;
+  background-color: transparent;
 }

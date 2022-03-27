@@ -14,10 +14,10 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed z-10 inset-0 overflow-y-auto"
+        className="absolute z-10 inset-0 overflow-y-auto"
         onClose={handleClose}
       >
-        <div className="flex items-center justify-center min-h-screen py-10 px-4 text-center sm:block sm:p-0">
+        <div className="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
