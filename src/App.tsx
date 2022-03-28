@@ -5,12 +5,6 @@ import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { SettingsModal } from './components/modals/SettingsModal'
 import {
-  WIN_MESSAGES,
-  GAME_COPIED_MESSAGE,
-  NOT_ENOUGH_LETTERS_MESSAGE,
-  CORRECT_CODE_MESSAGE,
-} from './constants/strings'
-import {
   MAX_CODE_LENGTH,
   MAX_CHALLENGES,
   REVEAL_TIME_MS,
@@ -33,6 +27,7 @@ import { Navbar } from './components/navbar/Navbar'
 import { HintsModal } from './components/modals/HintsModal'
 import { localized } from './lib/localize'
 import { Fireworks } from 'fireworks-js/dist/react'
+import { format } from 'react-string-format'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -77,7 +72,7 @@ function App() {
     }
     if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
       setIsGameLost(true)
-      showErrorAlert(CORRECT_CODE_MESSAGE(solution), {
+      showErrorAlert(format(localized['app.correctcode'], solution), {
         persist: true,
       })
     }
@@ -136,8 +131,13 @@ function App() {
 
   useEffect(() => {
     if (isGameWon) {
+      const winMessages = [
+        localized['app.win1'],
+        localized['app.win2'],
+        localized['app.win3'],
+      ]
       const winMessage =
-        WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
+        winMessages[Math.floor(Math.random() * winMessages.length)]
       const delayMs = REVEAL_TIME_MS * MAX_CODE_LENGTH
 
       showSuccessAlert(winMessage, {
@@ -174,7 +174,7 @@ function App() {
 
     if (!(codeLength(currentGuess) === MAX_CODE_LENGTH)) {
       setCurrentRowClass('jiggle')
-      return showErrorAlert(NOT_ENOUGH_LETTERS_MESSAGE, {
+      return showErrorAlert(localized['app.notenoughnumbers'], {
         onClose: clearCurrentRowClass,
       })
     }
@@ -204,7 +204,7 @@ function App() {
       if (guesses.length === MAX_CHALLENGES - 1) {
         setStats(addStatsForCompletedGame(stats, guesses.length + 1))
         setIsGameLost(true)
-        showErrorAlert(CORRECT_CODE_MESSAGE(solution), {
+        showErrorAlert(format(localized['app.correctcode'], solution), {
           persist: true,
           delayMs: REVEAL_TIME_MS * MAX_CODE_LENGTH + 1,
         })
@@ -253,7 +253,9 @@ function App() {
         gameStats={stats}
         isGameLost={isGameLost}
         isGameWon={isGameWon}
-        handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+        handleShareToClipboard={() =>
+          showSuccessAlert(localized['app.gamecopied'])
+        }
         isDarkMode={isDarkMode}
         isHighContrastMode={isHighContrastMode}
         numberOfGuessesMade={guesses.length}

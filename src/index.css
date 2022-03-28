@@ -236,6 +236,8 @@ svg.cursor-pointer:hover {
 
 .buymeacoffee img {
   display: inline-block;
+  height: 36px;
+  border: 0;
 }
 
 @media (max-height: 650px) {

@@ -1,4 +1,10 @@
 {
+    "app.notenoughnumbers": "Só codigos com 5 números",
+    "app.win1": "Bom trabalho!",
+    "app.win2": "Genial",
+    "app.win3": "Espetáculo!",
+    "app.gamecopied": "Copiado",
+    "app.correctcode": "O codigo correto era {0}",
     "app.infomodal.title": "Como jogar",
     "app.infomodal.info": "Adivinhar o codigo em 6 tentativas. Depois de cada tentativa, a cor dos quadrados mudará para mostrar quão perto estás da solução.",
     "app.infomodal.correct": "O número 2 existe no codigo e está na posição correcta.",

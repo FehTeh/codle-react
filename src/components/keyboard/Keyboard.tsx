@@ -1,6 +1,5 @@
 import { Key } from './Key'
 import { useEffect } from 'react'
-import { ENTER_TEXT } from '../../constants/strings'
 import { BackspaceIcon } from '@heroicons/react/outline'
 
 type Props = {
@@ -35,7 +34,6 @@ export const Keyboard = ({
         onDelete()
       } else {
         const key = e.key
-        // TODO: check this test if the range works with non-english letters
         if (key.length === 1 && key >= '0' && key <= '9') {
           onChar(key)
         }
@@ -61,7 +59,7 @@ export const Keyboard = ({
       </div>
       <div className="flex justify-center">
         <Key width={65.4} value="ENTER" onClick={onClick}>
-          {ENTER_TEXT}
+          Enter
         </Key>
         {['7','8','9','0'].map((key) => (
           <Key

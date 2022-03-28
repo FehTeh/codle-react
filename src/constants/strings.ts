@@ -1,12 +1,3 @@
-export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
-
-export const WIN_MESSAGES = ['Great Job!', 'Awesome', 'Well done!']
-export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
-export const NOT_ENOUGH_LETTERS_MESSAGE = 'Not enough letters'
-export const CORRECT_CODE_MESSAGE = (solution: string) =>
-  `The code was ${solution}`
-export const ENTER_TEXT = 'Enter'
-
 export const HINT_ODD = (position: string) => `${position} is a odd number`;
 export const HINT_EVEN = (position: string) => `${position} is a even number`;
 export const HINT_GREATER_THAN = (positionX: string, positionY: string) => `${positionX} is greater than ${positionY}`;

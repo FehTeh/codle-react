@@ -4,7 +4,7 @@ import {
   InformationCircleIcon,
   QuestionMarkCircleIcon
 } from '@heroicons/react/outline'
-import { GAME_TITLE } from '../../constants/strings'
+import { GAME_TITLE } from '../../constants/settings'
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void

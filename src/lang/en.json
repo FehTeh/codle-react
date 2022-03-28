@@ -1,4 +1,10 @@
 {
+    "app.notenoughnumbers": "Only codes with 5 numbers",
+    "app.win1": "Great Job!",
+    "app.win2": "Awesome",
+    "app.win3": "Well done!",
+    "app.gamecopied": "Copied to clipboard",
+    "app.correctcode": "The code was {0}",
     "app.infomodal.title": "How to play",
     "app.infomodal.info": "Guess the code in 6 tries. After each guess, the color of the tiles will change to show how close your guess was to the code.",
     "app.infomodal.correct": "The number 2 is in the code and in the correct spot.",
