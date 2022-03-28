@@ -24,22 +24,22 @@ export const Navbar = ({
       <div className="navbar-content px-5">
         <div className="left-icons">
           <InformationCircleIcon
-            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            className="h-6 w-6 mr-2 cursor-pointer stroke-white"
             onClick={() => setIsHintsModalOpen(true)}
           />
         </div>
-        <p className="title text-xl ml-2.5 font-bold dark:text-white">{GAME_TITLE}</p>
+        <p className="title text-xl ml-2.5 font-bold text-white">{GAME_TITLE}</p>
         <div className="right-icons">
           <QuestionMarkCircleIcon
-            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            className="h-6 w-6 mr-2 cursor-pointer stroke-white"
             onClick={() => setIsInfoModalOpen(true)}
           />
           <ChartBarIcon
-            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            className="h-6 w-6 mr-3 cursor-pointer stroke-white"
             onClick={() => setIsStatsModalOpen(true)}
           />
           <CogIcon
-            className="h-6 w-6 cursor-pointer dark:stroke-white"
+            className="h-6 w-6 cursor-pointer stroke-white"
             onClick={() => setIsSettingsModalOpen(true)}
           />
         </div>

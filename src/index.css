@@ -5,24 +5,20 @@
 :root {
   --animation-speed: 1000ms;
   --animation-speed-fast: 250ms;
-  --default-cell-bg-color: theme('colors.white');
-  --default-cell-border-color: theme('colors.black');
-  --default-cell-text-color: theme('colors.black');
-  --absent-cell-bg-color: theme('colors.slate.400');
-  --correct-cell-bg-color: theme('colors.green.400');
-  --present-cell-bg-color: theme('colors.yellow.400');
-}
-
-.dark {
-  --default-cell-bg-color: theme('colors.slate.900');
-  --default-cell-border-color: theme('colors.white');
+  --default-cell-border-color: theme('colors.slate.700');
   --default-cell-text-color: theme('colors.white');
   --absent-cell-bg-color: theme('colors.slate.700');
+  --correct-cell-bg-color: theme('colors.green.400');
+  --present-cell-bg-color: theme('colors.yellow.400');
 }
 
 .high-contrast {
   --correct-cell-bg-color: theme('colors.orange.400');
   --present-cell-bg-color: theme('colors.cyan.400');
+}
+
+html {
+  background-color: #41658a;
 }
 
 .cell-fill-animation {
@@ -124,14 +120,16 @@ svg.cursor-pointer:hover {
 @keyframes revealAbsentCharCell {
   0% {
     transform: rotateX(0deg);
-    background-color: var(--default-cell-bg-color);
+    background-color: transparent;
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
+    border-width: 4px;
   }
   50% {
-    background-color: var(--default-cell-bg-color);
+    background-color: transparent;
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
+    border-width: 4px;
   }
   50.1% {
     background-color: var(--absent-cell-bg-color);
@@ -145,14 +143,16 @@ svg.cursor-pointer:hover {
 @keyframes revealCorrectCharCell {
   0% {
     transform: rotateX(0deg);
-    background-color: var(--default-cell-bg-color);
+    background-color: transparent;
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
+    border-width: 4px;
   }
   50% {
-    background-color: var(--default-cell-bg-color);
+    background-color: transparent;
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
+    border-width: 4px;
   }
   50.1% {
     background-color: var(--correct-cell-bg-color);
@@ -166,14 +166,16 @@ svg.cursor-pointer:hover {
 @keyframes revealPresentCharCell {
   0% {
     transform: rotateX(0deg);
-    background-color: var(--default-cell-bg-color);
+    background-color: transparent;
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
+    border-width: 4px;
   }
   50% {
-    background-color: var(--default-cell-bg-color);
+    background-color: transparent;
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
+    border-width: 4px;
   }
   50.1% {
     background-color: var(--present-cell-bg-color);
@@ -240,7 +242,7 @@ svg.cursor-pointer:hover {
   border: 0;
 }
 
-@media (max-height: 650px) {
+@media (max-height: 660px) {
   .game {
     transition: all 1s;
     transform: scale(0.9);
@@ -248,15 +250,7 @@ svg.cursor-pointer:hover {
   }
 }
 
-@media (max-height: 600px) {
-  .game {
-    transition: all 1s;
-    transform: scale(0.85);
-    transform-origin: top;
-  }
-}
-
-@media (max-height: 570px) {
+@media (max-height: 610px) {
   .game {
     transition: all 1s;
     transform: scale(0.8);
@@ -264,10 +258,18 @@ svg.cursor-pointer:hover {
   }
 }
 
+@media (max-height: 570px) {
+  .game {
+    transition: all 1s;
+    transform: scale(0.7);
+    transform-origin: top;
+  }
+}
+
 @media (max-height: 540px) {
   .game {
     transition: all 1s;
-    transform: scale(0.75);
+    transform: scale(0.6);
     transform-origin: top;
   }
 }

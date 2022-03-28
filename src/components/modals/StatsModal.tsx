@@ -15,7 +15,6 @@ type Props = {
   isGameLost: boolean
   isGameWon: boolean
   handleShareToClipboard: () => void
-  isDarkMode: boolean
   isHighContrastMode: boolean
   numberOfGuessesMade: number
 }
@@ -28,7 +27,6 @@ export const StatsModal = ({
   isGameLost,
   isGameWon,
   handleShareToClipboard,
-  isDarkMode,
   isHighContrastMode,
   numberOfGuessesMade,
 }: Props) => {
@@ -40,7 +38,7 @@ export const StatsModal = ({
         handleClose={handleClose}
       >
         <StatBar gameStats={gameStats} />
-        <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+        <p className="mt-6 italic text-sm text-gray-300">
           {localized['app.statsmodal.buymeacoffee']}
           <a className="buymeacoffee" href='https://ko-fi.com/J3J2BUDV7' target='_blank' rel="noreferrer">
             <img src='https://cdn.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com' />
@@ -56,7 +54,7 @@ export const StatsModal = ({
       handleClose={handleClose}
     >
       <StatBar gameStats={gameStats} />
-      <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
+      <h4 className="text-lg leading-6 font-medium text-gray-100">
         {localized['app.statsmodal.guessdistribution']}
       </h4>
       <Histogram
@@ -64,11 +62,11 @@ export const StatsModal = ({
         numberOfGuessesMade={numberOfGuessesMade}
       />
       {(isGameLost || isGameWon) && (
-        <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
+        <div className="mt-5 sm:mt-6 columns-2 text-white">
           <div>
             <h5>{localized['app.statsmodal.newcode']}</h5>
             <Countdown
-              className="text-lg font-medium text-gray-900 dark:text-gray-100"
+              className="text-lg font-medium text-gray-100"
               date={tomorrow}
               daysInHours={true}
             />
@@ -80,7 +78,6 @@ export const StatsModal = ({
               shareStatus(
                 guesses,
                 isGameLost,
-                isDarkMode,
                 isHighContrastMode,
                 handleShareToClipboard
               )
@@ -90,7 +87,7 @@ export const StatsModal = ({
           </button>
         </div>
       )}
-      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+      <p className="mt-6 italic text-sm text-gray-300">
         {localized['app.statsmodal.buymeacoffee']}
         <a className="buymeacoffee" href='https://ko-fi.com/J3J2BUDV7' target='_blank' rel="noreferrer">
             <img src='https://cdn.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com' />

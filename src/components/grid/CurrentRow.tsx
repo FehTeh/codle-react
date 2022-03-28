@@ -5,9 +5,14 @@ import { splitIntoNumbers } from '../../lib/codes'
 type Props = {
   guess: string
   className: string
+  inGame: boolean
 }
 
-export const CurrentRow = ({ guess, className }: Props) => {
+export const CurrentRow = ({ 
+  guess, 
+  className,
+  inGame
+}: Props) => {
   const splitGuess = splitIntoNumbers(guess)
   const emptyCells = Array.from(Array(MAX_CODE_LENGTH - splitGuess.length))
   const classes = `flex justify-center mb-1 ${className}`
@@ -15,10 +20,10 @@ export const CurrentRow = ({ guess, className }: Props) => {
   return (
     <div className={classes}>
       {splitGuess.map((number, i) => (
-        <Cell key={i} value={number} />
+        <Cell key={i} value={number} isCurrent={true} inGame={inGame}/>
       ))}
       {emptyCells.map((_, i) => (
-        <Cell key={i} />
+        <Cell key={i} isCurrent={true} inGame={inGame}/>
       ))}
     </div>
   )

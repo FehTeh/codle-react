@@ -10,6 +10,7 @@ type Props = {
   currentGuess: string
   isRevealing?: boolean
   currentRowClassName: string
+  inGame: boolean
   showHint: boolean
 }
 
@@ -18,6 +19,7 @@ export const Grid = ({
   currentGuess,
   isRevealing,
   currentRowClassName,
+  inGame,
   showHint
 }: Props) => {
   const empties =
@@ -37,7 +39,10 @@ export const Grid = ({
           />
         ))}
         {guesses.length < MAX_CHALLENGES && (
-          <CurrentRow guess={currentGuess} className={currentRowClassName} />
+          <CurrentRow
+            guess={currentGuess} 
+            className={currentRowClassName}
+            inGame={inGame} />
         )}
         {empties.map((_, i) => (
           <EmptyRow key={i} />
@@ -45,7 +50,7 @@ export const Grid = ({
       </div>
       {showHint && (
         <div className="flex justify-center mb-1">
-          <p className="mx-0.5 text-2xl font-bold dark:text-white correct shadowed">
+          <p className="mx-0.5 text-2xl font-bold text-white correct shadowed">
             {getHint(currentGuess.length)}
           </p>
         </div>

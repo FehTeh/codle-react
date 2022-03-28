@@ -10,7 +10,7 @@ type Props = {
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title={localized['app.infomodal.title']} isOpen={isOpen} handleClose={handleClose}>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-gray-300">
         {localized['app.infomodal.info']}
       </p>
 
@@ -26,7 +26,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value={9} />
         <Cell value={5} />
       </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-gray-300">
         {localized['app.infomodal.correct']}
       </p>
 
@@ -42,7 +42,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value={7} />
         <Cell value={1} />
       </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-gray-300">
         {localized['app.infomodal.present']}
       </p>
 
@@ -53,11 +53,11 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell isRevealing={true} isCompleted={true} value={7} status="absent" />
         <Cell value={5} />
       </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-gray-300">
         {localized['app.infomodal.absent']}
       </p>
 
-      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+      <p className="mt-6 italic text-sm text-gray-300">
         {localized['app.infomodal.hint']}
       </p>
     </BaseModal>

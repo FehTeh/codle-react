@@ -61,8 +61,8 @@ export const Keyboard = ({
             isRevealing={isRevealing}
           />
         ))}
-        <Key width={65.4} value="ENTER" onClick={onClick}>
-          Enter
+        <Key width={65.4} value="DELETE" onClick={onClick}>
+          <BackspaceIcon className="h-6 w-6 cursor-pointer"/>
         </Key>
       </div>
       <div className="flex justify-center">
@@ -75,8 +75,8 @@ export const Keyboard = ({
             isRevealing={isRevealing}
           />
         ))}
-        <Key width={65.4} value="DELETE" onClick={onClick}>
-          <BackspaceIcon className="h-6 w-6 cursor-pointer"/>
+        <Key width={65.4} value="ENTER" onClick={onClick}>
+          Enter
         </Key>
       </div>
     </div>

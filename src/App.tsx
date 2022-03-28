@@ -20,7 +20,6 @@ import {
   getStoredIsHighContrastMode,
 } from './lib/localStorage'
 
-import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
@@ -30,10 +29,6 @@ import { Fireworks } from 'fireworks-js/dist/react'
 import { format } from 'react-string-format'
 
 function App() {
-  const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches
-
   const [lang, setLang] = useState(
     localStorage.getItem('lang')
       ? (localStorage.getItem('lang') as string)
@@ -50,13 +45,7 @@ function App() {
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem('theme')
-      ? localStorage.getItem('theme') === 'dark'
-      : prefersDarkMode
-      ? true
-      : false
-  )
+
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
   )
@@ -92,28 +81,17 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-
     if (isHighContrastMode) {
       document.documentElement.classList.add('high-contrast')
     } else {
       document.documentElement.classList.remove('high-contrast')
     }
-  }, [isDarkMode, isHighContrastMode])
+  }, [isHighContrastMode])
 
   const handleLangChange = (lang: string) => {
     localized.setLanguage(lang)
     setLang(lang)
     localStorage.setItem('lang', lang)
-  }
-
-  const handleDarkMode = (isDark: boolean) => {
-    setIsDarkMode(isDark)
-    localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }
 
   const handleHighContrastMode = (isHighContrast: boolean) => {
@@ -225,6 +203,7 @@ function App() {
         currentGuess={currentGuess}
         isRevealing={isRevealing}
         currentRowClassName={currentRowClass}
+        inGame={!isGameWon && !isGameLost}
         showHint={
           !isGameWon && !isGameLost && currentGuess.length < MAX_CODE_LENGTH
         }
@@ -257,15 +236,12 @@ function App() {
         handleShareToClipboard={() =>
           showSuccessAlert(localized['app.gamecopied'])
         }
-        isDarkMode={isDarkMode}
         isHighContrastMode={isHighContrastMode}
         numberOfGuessesMade={guesses.length}
       />
       <SettingsModal
         isOpen={isSettingsModalOpen}
         handleClose={() => setIsSettingsModalOpen(false)}
-        isDarkMode={isDarkMode}
-        handleDarkMode={handleDarkMode}
         isHighContrastMode={isHighContrastMode}
         handleHighContrastMode={handleHighContrastMode}
         locale={lang}
