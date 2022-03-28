@@ -27,5 +27,16 @@
     "app.statsbar.totaltries": "jogos",
     "app.statsbar.successrate": "de vitórias",
     "app.statsbar.currentstreak": "sequencia de vitórias",
-    "app.statsbar.beststreak": "melhor sequência"
+    "app.statsbar.beststreak": "melhor sequência",
+    "app.hint.odd" : "{0} é um número impar",
+    "app.hint.even" : "{0} é um número par",
+    "app.hint.greaterthan" : "{0} é maior que {1}",
+    "app.hint.lessthan" : "{0} é menor que {1}",
+    "app.hint.equalsto" : "{0} é igual a {1}",
+    "app.hint.multipleof" : "{0} é multiplo de {1}",
+    "app.hint.notmultipleof" : "{0} não é multiplo de {1}",
+    "app.hint.prime" : "{0} é um número primo",
+    "app.hint.notprime" : "{0} não é um número primo",
+    "app.hint.fibonacci" : "{0} faz parte da sequencia de fibonnaci",
+    "app.hint.notfibonacci" : "{0} não faz parte da sequencia de fibonnaci"
 }

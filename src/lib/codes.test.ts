@@ -1,4 +1,3 @@
-import { HINT_GREATER_THAN } from '../constants/strings'
 import * as module from './codes';
 
 describe('getHint', () => {

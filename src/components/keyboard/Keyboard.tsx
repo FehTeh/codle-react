@@ -1,11 +1,13 @@
 import { Key } from './Key'
 import { useEffect } from 'react'
 import { BackspaceIcon } from '@heroicons/react/outline'
+import { getStatuses } from '../../lib/statuses'
 
 type Props = {
   onChar: (value: string) => void
   onDelete: () => void
   onEnter: () => void
+  guesses: string[]
   isRevealing?: boolean
 }
 
@@ -13,8 +15,10 @@ export const Keyboard = ({
   onChar,
   onDelete,
   onEnter,
+  guesses,
   isRevealing,
 }: Props) => {
+  const charStatuses = getStatuses(guesses)
 
   const onClick = (value: string) => {
     if (value === 'ENTER') {
@@ -48,24 +52,26 @@ export const Keyboard = ({
   return (
     <div className='keyboard'>
       <div className="flex justify-center mb-1">
-        {['1', '2', '3', '4', '5', '6'].map((key) => (
+        {['1', '2', '3', '4', '5'].map((key) => (
           <Key
             value={key}
             key={key}
             onClick={onClick}
+            status={charStatuses[key]}
             isRevealing={isRevealing}
           />
         ))}
-      </div>
-      <div className="flex justify-center">
         <Key width={65.4} value="ENTER" onClick={onClick}>
           Enter
         </Key>
-        {['7','8','9','0'].map((key) => (
+      </div>
+      <div className="flex justify-center">
+        {['6','7','8','9','0'].map((key) => (
           <Key
             value={key}
             key={key}
             onClick={onClick}
+            status={charStatuses[key]}
             isRevealing={isRevealing}
           />
         ))}

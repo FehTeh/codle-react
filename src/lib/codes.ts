@@ -1,18 +1,7 @@
 import md5 from 'md5'
+import { format } from 'react-string-format'
 import { MAX_CODE_LENGTH } from '../constants/settings'
-import { HINT_CALC, 
-         HINT_EQUALS_TO, 
-         HINT_EVEN, 
-         HINT_FIBONACCI, 
-         HINT_GREATER_THAN, 
-         HINT_LESS_THAN, 
-         HINT_MULTIPLE_OF, 
-         HINT_NOT_FIBONACCI, 
-         HINT_NOT_MULTIPLE_OF, 
-         HINT_NOT_PRIME, 
-         HINT_ODD, 
-         HINT_PRIME } 
-from '../constants/strings'
+import { localized } from './localize'
 
 export const isWinningWord = (code: string) => {
   return solution === code
@@ -35,57 +24,57 @@ export const getHint = (position:number) => {
   switch(hints[position]) {
     case 1: { // x ><= y
       if(solutionSplit[position] > solutionSplit[positionCompare]){
-        return HINT_GREATER_THAN(letter, letterCompare);
+        return format(localized['app.hint.greaterthan'], letter, letterCompare);
       }
       if(solutionSplit[position] < solutionSplit[positionCompare]){
-        return HINT_LESS_THAN(letter, letterCompare);
+        return format(localized['app.hint.lessthan'], letter, letterCompare);
       }
-      return HINT_EQUALS_TO(letter, letterCompare);
+      return format(localized['app.hint.equalsto'], letter, letterCompare);
     }
     case 2: { // multiple of 3
       if(solutionSplit[position] % 3 === 0){
-        return HINT_MULTIPLE_OF(letter, 3);
+        return format(localized['app.hint.multipleof'], letter, 3);
       }
-      return HINT_NOT_MULTIPLE_OF(letter, 3);
+      return format(localized['app.hint.notmultipleof'],letter, 3);
     }
     case 3: {
       if(solutionSplit[position] % 4 === 0){
-        return HINT_MULTIPLE_OF(letter, 4);
+        return format(localized['app.hint.multipleof'],letter, 4);
       }
-      return HINT_NOT_MULTIPLE_OF(letter, 4);
+      return format(localized['app.hint.notmultipleof'],letter, 4);
     }
     case 4: {
       if(solutionSplit[position] % 5 === 0){
-        return HINT_MULTIPLE_OF(letter, 5);
+        return format(localized['app.hint.multipleof'],letter, 5);
       }
-      return HINT_NOT_MULTIPLE_OF(letter, 5);
+      return format(localized['app.hint.notmultipleof'],letter, 5);
     }
     case 5: { // is prime
       if([2,3,5,7].includes(solutionSplit[position])) {
-        return HINT_PRIME(letter);
+        return format(localized['app.hint.prime'],letter);
       }
-      return HINT_NOT_PRIME(letter);
+      return format(localized['app.hint.notprime'],letter);
     }
     case 6: { // is inside fibonacci
       if([0,1,2,3,5,8].includes(solutionSplit[position])) {
-        return HINT_FIBONACCI(letter);
+        return format(localized['app.hint.fibonacci'],letter);
       }
-      return HINT_NOT_FIBONACCI(letter);
+      return format(localized['app.hint.notfibonacci'],letter);
     }
     case 7: {
-      return HINT_CALC(letter, letterCompare, "+", solutionSplit[position] + solutionSplit[positionCompare])
+      return format("{0} {1} {2} = {3}", letter, letterCompare, "+", solutionSplit[position] + solutionSplit[positionCompare])
     }
     case 8: {
-      return HINT_CALC(letter, letterCompare, "-", solutionSplit[position] - solutionSplit[positionCompare])
+      return format("{0} {1} {2} = {3}", letter, letterCompare, "-", solutionSplit[position] - solutionSplit[positionCompare])
     }
     case 9: {
-      return HINT_CALC(letter, letterCompare, "*", solutionSplit[position] * solutionSplit[positionCompare])
+      return format("{0} {1} {2} = {3}", letter, letterCompare, "*", solutionSplit[position] * solutionSplit[positionCompare])
     }
     default: { //odd or event
       if(solutionSplit[position] % 2 === 0){
-        return HINT_EVEN(letter);
+        return format(localized['app.hint.even'], letter);
       }
-      return HINT_ODD(letter);
+      return format(localized['app.hint.odd'], letter);
     }
   }
 }

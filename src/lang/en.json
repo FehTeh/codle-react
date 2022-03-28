@@ -27,5 +27,16 @@
     "app.statsbar.totaltries": "total tries",
     "app.statsbar.successrate": "success rate",
     "app.statsbar.currentstreak": "current streak",
-    "app.statsbar.beststreak": "best streak"
+    "app.statsbar.beststreak": "best streak",
+    "app.hint.odd" : "{0} is a odd number",
+    "app.hint.even" : "{0} is a even number",
+    "app.hint.greaterthan" : "{0} is greater than {1}",
+    "app.hint.lessthan" : "{0} is less than {1}",
+    "app.hint.equalsto" : "{0} is equals to {1}",
+    "app.hint.multipleof" : "{0} is multiple of {1}",
+    "app.hint.notmultipleof" : "{0} is not multiple of {1}",
+    "app.hint.prime" : "{0} is a prime number",
+    "app.hint.notprime" : "{0} is not a prime number",
+    "app.hint.fibonacci" : "{0} is a part of fibonacci sequence",
+    "app.hint.notfibonacci" : "{0} is not part of fibonnaci sequence"
 }

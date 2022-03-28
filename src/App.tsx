@@ -234,6 +234,7 @@ function App() {
           onChar={onChar}
           onDelete={onDelete}
           onEnter={onEnter}
+          guesses={guesses}
           isRevealing={isRevealing}
         />
       )}
