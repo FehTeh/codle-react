@@ -46,7 +46,7 @@ export const Cell = ({
         status === 'present' && !isHighContrast,
       'cell-fill-animation': isFilled,
       'cell-reveal': shouldReveal,
-      'cell-cursor-animation': isCurrentCell
+      'cell-cursor-animation': isCurrentCell && inGame
     }
   )
 
@@ -54,7 +54,7 @@ export const Cell = ({
     <div className={classes} style={{ animationDelay }}>
       <div className="letter-container" style={{ animationDelay }}>
         {value} 
-        {isCurrentCell && "_"}
+        {isCurrentCell && inGame && "_"}
       </div>
     </div>
   )
