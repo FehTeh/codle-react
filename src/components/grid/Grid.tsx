@@ -20,7 +20,7 @@ export const Grid = ({
   isRevealing,
   currentRowClassName,
   inGame,
-  showHint
+  showHint,
 }: Props) => {
   const empties =
     guesses.length < MAX_CHALLENGES - 1
@@ -28,8 +28,8 @@ export const Grid = ({
       : []
 
   return (
-    <div className='game'>
-      <div className='gameGrid'>
+    <div className="game">
+      <div className="gameGrid">
         <HeaderRow />
         {guesses.map((guess, i) => (
           <CompletedRow
@@ -40,9 +40,10 @@ export const Grid = ({
         ))}
         {guesses.length < MAX_CHALLENGES && (
           <CurrentRow
-            guess={currentGuess} 
+            guess={currentGuess}
             className={currentRowClassName}
-            inGame={inGame} />
+            inGame={inGame}
+          />
         )}
         {empties.map((_, i) => (
           <EmptyRow key={i} />

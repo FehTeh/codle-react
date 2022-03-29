@@ -17,10 +17,14 @@ export const SettingsModal = ({
   isHighContrastMode,
   handleHighContrastMode,
   locale,
-  handleLangChange
+  handleLangChange,
 }: Props) => {
   return (
-    <BaseModal title={localized['app.settingsmodal.title']} isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal
+      title={localized['app.settingsmodal.title']}
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <div className="flex flex-col mt-2 divide-y">
         <SettingsToggle
           settingName={localized['app.settingsmodal.highcontrast']}
@@ -28,9 +32,12 @@ export const SettingsModal = ({
           handleFlag={handleHighContrastMode}
           description={localized['app.settingsmodal.highcontrastinfo']}
         />
-        <select value={locale} onChange={(event) => handleLangChange(event.target.value)}>
-          <option value='pt'>Português</option>
-          <option value='en'>English</option>
+        <select
+          value={locale}
+          onChange={(event) => handleLangChange(event.target.value)}
+        >
+          <option value="pt">Português</option>
+          <option value="en">English</option>
         </select>
       </div>
       <p className="mt-6 italic text-sm text-gray-300">

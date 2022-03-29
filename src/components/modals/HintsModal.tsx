@@ -8,9 +8,12 @@ type Props = {
 }
 
 export const HintsModal = ({ isOpen, handleClose }: Props) => {
-
   return (
-    <BaseModal title={localized['app.hintsmodal.title']} isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal
+      title={localized['app.hintsmodal.title']}
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <p className="text-sm text-gray-300">
         {localized['app.hintsmodal.info']}
       </p>

@@ -32,9 +32,7 @@ export const SettingsToggle = ({
         <div className="text-gray-300 mt-2 text-left">
           <p className="leading-none">{settingName}</p>
           {description && (
-            <p className="text-xs mt-1 text-gray-300">
-              {description}
-            </p>
+            <p className="text-xs mt-1 text-gray-300">{description}</p>
           )}
         </div>
         <div className={toggleHolder} onClick={() => handleFlag(!flag)}>

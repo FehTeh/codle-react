@@ -9,7 +9,6 @@ jest.mock('./codes', () => ({
 }))
 
 describe('generateEmojiGrid', () => {
-
   test('generates grid for codes', () => {
     const guesses = ['54321', '67890', '12345']
     const tiles = ['C', 'P', 'A'] // Correct, Present, Absemt
@@ -21,5 +20,4 @@ describe('generateEmojiGrid', () => {
     expect(gridParts[1]).toBe('AAAAA')
     expect(gridParts[2]).toBe('CCCCC')
   })
-
 })

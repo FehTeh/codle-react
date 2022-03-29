@@ -40,8 +40,16 @@ export const StatsModal = ({
         <StatBar gameStats={gameStats} />
         <p className="mt-6 italic text-sm text-gray-300">
           {localized['app.statsmodal.buymeacoffee']}
-          <a className="buymeacoffee" href='https://ko-fi.com/J3J2BUDV7' target='_blank' rel="noreferrer">
-            <img src='https://cdn.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com' />
+          <a
+            className="buymeacoffee"
+            href="https://ko-fi.com/J3J2BUDV7"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3"
+              alt="Buy Me a Coffee at ko-fi.com"
+            />
           </a>
         </p>
       </BaseModal>
@@ -89,8 +97,16 @@ export const StatsModal = ({
       )}
       <p className="mt-6 italic text-sm text-gray-300">
         {localized['app.statsmodal.buymeacoffee']}
-        <a className="buymeacoffee" href='https://ko-fi.com/J3J2BUDV7' target='_blank' rel="noreferrer">
-            <img src='https://cdn.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com' />
+        <a
+          className="buymeacoffee"
+          href="https://ko-fi.com/J3J2BUDV7"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3"
+            alt="Buy Me a Coffee at ko-fi.com"
+          />
         </a>
       </p>
     </BaseModal>

@@ -33,7 +33,8 @@ export const Cell = ({
     'w-16 h-16 border-solid border-2 flex items-center justify-center mx-0.5 text-4xl font-bold rounded-md text-white',
     {
       'bg-slate-900/25 border-slate-600/25': !status,
-      'border-slate-700 border-4 bg-transparent': (isCurrentRow || isCurrentCell) && inGame,
+      'border-slate-700 border-4 bg-transparent':
+        (isCurrentRow || isCurrentCell) && inGame,
       'absent shadowed bg-slate-700 text-white border-slate-700':
         status === 'absent',
       'correct shadowed bg-orange-500 text-white border-orange-500':
@@ -46,15 +47,15 @@ export const Cell = ({
         status === 'present' && !isHighContrast,
       'cell-fill-animation': isFilled,
       'cell-reveal': shouldReveal,
-      'cell-cursor-animation': isCurrentCell && inGame
+      'cell-cursor-animation': isCurrentCell && inGame,
     }
   )
 
   return (
     <div className={classes} style={{ animationDelay }}>
       <div className="letter-container" style={{ animationDelay }}>
-        {value} 
-        {isCurrentCell && inGame && "_"}
+        {value}
+        {isCurrentCell && inGame && '_'}
       </div>
     </div>
   )

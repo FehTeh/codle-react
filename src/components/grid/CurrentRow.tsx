@@ -8,11 +8,7 @@ type Props = {
   inGame: boolean
 }
 
-export const CurrentRow = ({ 
-  guess, 
-  className,
-  inGame
-}: Props) => {
+export const CurrentRow = ({ guess, className, inGame }: Props) => {
   const splitGuess = splitIntoNumbers(guess)
   const emptyCells = Array.from(Array(MAX_CODE_LENGTH - splitGuess.length))
   const classes = `flex justify-center mb-1 ${className}`
@@ -23,7 +19,12 @@ export const CurrentRow = ({
         <Cell key={i} isCurrentRow={true} inGame={inGame} value={number} />
       ))}
       {emptyCells.map((_, i) => (
-        <Cell key={i} isCurrentRow={true} inGame={inGame} isCurrentCell={i === 0}/>
+        <Cell
+          key={i}
+          isCurrentRow={true}
+          inGame={inGame}
+          isCurrentCell={i === 0}
+        />
       ))}
     </div>
   )

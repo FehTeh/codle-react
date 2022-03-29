@@ -50,7 +50,7 @@ export const Keyboard = ({
   }, [onEnter, onDelete, onChar])
 
   return (
-    <div className='keyboard'>
+    <div className="keyboard">
       <div className="flex justify-center mb-1">
         {['1', '2', '3', '4', '5'].map((key) => (
           <Key
@@ -62,11 +62,11 @@ export const Keyboard = ({
           />
         ))}
         <Key width={65.4} value="DELETE" onClick={onClick}>
-          <BackspaceIcon className="h-6 w-6 cursor-pointer"/>
+          <BackspaceIcon className="h-6 w-6 cursor-pointer" />
         </Key>
       </div>
       <div className="flex justify-center">
-        {['6','7','8','9','0'].map((key) => (
+        {['6', '7', '8', '9', '0'].map((key) => (
           <Key
             value={key}
             key={key}

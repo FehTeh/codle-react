@@ -2,7 +2,7 @@ import {
   ChartBarIcon,
   CogIcon,
   InformationCircleIcon,
-  QuestionMarkCircleIcon
+  QuestionMarkCircleIcon,
 } from '@heroicons/react/outline'
 import { GAME_TITLE } from '../../constants/settings'
 
@@ -28,7 +28,9 @@ export const Navbar = ({
             onClick={() => setIsHintsModalOpen(true)}
           />
         </div>
-        <p className="title text-xl ml-2.5 font-bold text-white">{GAME_TITLE}</p>
+        <p className="title text-xl ml-2.5 font-bold text-white">
+          {GAME_TITLE}
+        </p>
         <div className="right-icons">
           <QuestionMarkCircleIcon
             className="h-6 w-6 mr-2 cursor-pointer stroke-white"
