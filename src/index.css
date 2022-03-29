@@ -21,6 +21,10 @@ html {
   background-color: #41658a;
 }
 
+.cell-cursor-animation > .letter-container {
+  animation: blink-animation 1s step-start 0s infinite;
+}
+
 .cell-fill-animation {
   animation: onTypeCell linear;
   animation-duration: 0.35s;
@@ -229,6 +233,12 @@ svg.cursor-pointer:hover {
   }
   100% {
     transform: translate(0, 0);
+  }
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
   }
 }
 

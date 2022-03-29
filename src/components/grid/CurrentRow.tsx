@@ -20,10 +20,10 @@ export const CurrentRow = ({
   return (
     <div className={classes}>
       {splitGuess.map((number, i) => (
-        <Cell key={i} value={number} isCurrent={true} inGame={inGame}/>
+        <Cell key={i} isCurrentRow={true} inGame={inGame} value={number} />
       ))}
       {emptyCells.map((_, i) => (
-        <Cell key={i} isCurrent={true} inGame={inGame}/>
+        <Cell key={i} isCurrentRow={true} inGame={inGame} isCurrentCell={i === 0}/>
       ))}
     </div>
   )
