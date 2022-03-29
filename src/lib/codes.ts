@@ -62,13 +62,13 @@ export const getHint = (position:number) => {
       return format(localized['app.hint.notfibonacci'],letter);
     }
     case 7: {
-      return format("{0} {1} {2} = {3}", letter, letterCompare, "+", solutionSplit[position] + solutionSplit[positionCompare])
+      return format("{0} {1} {2} = {3}", letter, "+", letterCompare, solutionSplit[position] + solutionSplit[positionCompare])
     }
     case 8: {
-      return format("{0} {1} {2} = {3}", letter, letterCompare, "-", solutionSplit[position] - solutionSplit[positionCompare])
+      return format("{0} {1} {2} = {3}", letter, "-", letterCompare, solutionSplit[position] - solutionSplit[positionCompare])
     }
     case 9: {
-      return format("{0} {1} {2} = {3}", letter, letterCompare, "*", solutionSplit[position] * solutionSplit[positionCompare])
+      return format("{0} {1} {2} = {3}", letter, "*", letterCompare, solutionSplit[position] * solutionSplit[positionCompare])
     }
     default: { //odd or event
       if(solutionSplit[position] % 2 === 0){
