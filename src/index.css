@@ -298,6 +298,7 @@ svg.cursor-pointer:hover {
   position: absolute;
   background-color: #41658a;
   text-align: center;
+  z-index: 1000;
 }
 
 .redirect img {
