@@ -60,7 +60,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <p className="mt-6 italic text-sm text-gray-300">
-        {localized['app.infomodal.hint']}
+        {localized['app.infomodal.neweveryday']}
       </p>
     </BaseModal>
   )

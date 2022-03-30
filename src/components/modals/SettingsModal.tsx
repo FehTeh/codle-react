@@ -1,6 +1,8 @@
 import { BaseModal } from './BaseModal'
 import { SettingsToggle } from './SettingsToggle'
 import { localized } from '../../lib/localize'
+import { GAME_TITLE } from '../../constants/settings'
+import { format } from 'react-string-format'
 
 type Props = {
   isOpen: boolean
@@ -41,12 +43,12 @@ export const SettingsModal = ({
         </select>
       </div>
       <p className="mt-6 italic text-sm text-gray-300">
-        {localized['app.settingsmodal.opensourceinfo']} -{' '}
+        {format(localized['app.settingsmodal.basedon'], GAME_TITLE)} -{' '}
         <a
-          href="https://github.com/fehteh/codle-react"
+          href="https://www.powerlanguage.co.uk/wordle"
           className="underline font-bold"
         >
-          {localized['app.settingsmodal.checkcode']}
+          {localized['app.settingsmodal.wordle']}
         </a>{' '}
       </p>
     </BaseModal>

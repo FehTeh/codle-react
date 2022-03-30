@@ -1,4 +1,5 @@
 export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
+export const REDIRECT_URL = process.env.REACT_APP_REDIRECT_URL!
 
 export const MAX_CODE_LENGTH = 5
 export const MAX_CHALLENGES = 6

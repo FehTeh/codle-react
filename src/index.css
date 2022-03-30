@@ -293,3 +293,13 @@ svg.cursor-pointer:hover {
   z-index: -1;
   background-color: transparent;
 }
+
+.redirect {
+  position: absolute;
+  background-color: #41658a;
+  text-align: center;
+}
+
+.redirect img {
+  display: inline;
+}

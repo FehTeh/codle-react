@@ -10,14 +10,14 @@
   "app.infomodal.correct": "O número 2 existe no codigo e está na posição correcta.",
   "app.infomodal.present": "O número 5 existe no codigo mas está na posição errada.",
   "app.infomodal.absent": "O número 7 não existe no codigo em nenhuma posição.",
-  "app.infomodal.hint": "Existe uma ajuda por coluna no icone de informação.",
+  "app.infomodal.neweveryday": "Um novo codigo disponivel a cada dia!",
   "app.hintsmodal.title": "Ajudas",
   "app.hintsmodal.info": "Estas são as ajudas para desvendar o codigo:",
   "app.settingsmodal.title": "Definições",
   "app.settingsmodal.highcontrast": "Modo Daltónico",
   "app.settingsmodal.highcontrastinfo": "Cores de alto contraste",
-  "app.settingsmodal.opensourceinfo": "Isto é uma versão open source do jogo de adivinha de palavras que todos conhecemos e adoramos",
-  "app.settingsmodal.checkcode": "codigo disponivel aqui",
+  "app.settingsmodal.basedon": "{0} é basedo no",
+  "app.settingsmodal.wordle": "Wordle",
   "app.statsmodal.title": "Estatisticas",
   "app.statsmodal.buymeacoffee": "Se gostas do jogo e quiseres contribuir",
   "app.statsmodal.guessdistribution": "Distribuição de adivinhas",
@@ -37,5 +37,7 @@
   "app.hint.prime": "{0} é um número primo",
   "app.hint.notprime": "{0} não é um número primo",
   "app.hint.fibonacci": "{0} faz parte da sequencia de fibonnaci",
-  "app.hint.notfibonacci": "{0} não faz parte da sequencia de fibonnaci"
+  "app.hint.notfibonacci": "{0} não faz parte da sequencia de fibonnaci",
+  "app.redirect.newlocation": "Mudamos de site. Agora disponivel em:",
+  "app.redirect.thankyou": "Obrigado!"
 }

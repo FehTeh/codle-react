@@ -10,14 +10,14 @@
   "app.infomodal.correct": "The number 2 is in the code and in the correct spot.",
   "app.infomodal.present": "The number 5 is in the code but in the wrong spot.",
   "app.infomodal.absent": "The number 7 is not in the code in any spot.",
-  "app.infomodal.hint": "There is available one hint per column in the info icon.",
+  "app.infomodal.neweveryday": "A new code will be available each day!",
   "app.hintsmodal.title": "Hints",
   "app.hintsmodal.info": "These are the hints to crack the code:",
   "app.settingsmodal.title": "Settings",
   "app.settingsmodal.highcontrast": "High Contrast Mode",
   "app.settingsmodal.highcontrastinfo": "For improved color vision",
-  "app.settingsmodal.opensourceinfo": "This is an open source version of the word guessing game we all know and love",
-  "app.settingsmodal.checkcode": "check out the code here",
+  "app.settingsmodal.basedon": "{0} is based on",
+  "app.settingsmodal.wordle": "Wordle",
   "app.statsmodal.title": "Statistics",
   "app.statsmodal.buymeacoffee": "If you like this game please feel free to",
   "app.statsmodal.guessdistribution": "Guess Distribution",
@@ -37,5 +37,7 @@
   "app.hint.prime": "{0} is a prime number",
   "app.hint.notprime": "{0} is not a prime number",
   "app.hint.fibonacci": "{0} is a part of fibonacci sequence",
-  "app.hint.notfibonacci": "{0} is not part of fibonnaci sequence"
+  "app.hint.notfibonacci": "{0} is not part of fibonnaci sequence",
+  "app.redirect.newlocation": "New website location. Now available at:",
+  "app.redirect.thankyou": "Thank you!"
 }
