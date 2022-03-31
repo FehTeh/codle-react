@@ -38,8 +38,8 @@
   "app.hint.notmultipleof": "{0} não é multiplo de {1}",
   "app.hint.prime": "{0} é um número primo",
   "app.hint.notprime": "{0} não é um número primo",
-  "app.hint.fibonacci": "{0} faz parte da sequencia de fibonnaci",
-  "app.hint.notfibonacci": "{0} não faz parte da sequencia de fibonnaci",
+  "app.hint.fibonacci": "{0} é um número de Fibonnaci",
+  "app.hint.notfibonacci": "{0} não é um número de Fibonnaci",
   "app.redirect.newlocation": "Mudamos de site. Agora disponivel em:",
   "app.redirect.thankyou": "Obrigado!"
 }

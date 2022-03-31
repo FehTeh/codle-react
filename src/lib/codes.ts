@@ -127,14 +127,39 @@ export const getSolutionOfDay = () => {
   const encodedTodayCharCode = encodedTodayCharCodeList.join('')
 
   const pin = encodedTodayCharCode.substring(0, MAX_CODE_LENGTH)
-  const hints = encodedTodayCharCode.substring(
-    MAX_CODE_LENGTH,
-    MAX_CODE_LENGTH * 2
+  const possibleHints = splitIntoNumbers(
+    encodedTodayCharCode.substring(MAX_CODE_LENGTH, MAX_CODE_LENGTH * 2)
   )
+
+  let hints = [possibleHints[0]]
+
+  for (var j = 1; j < possibleHints.length; j++) {
+    let toAdd = possibleHints[j]
+
+    while (hints.length === j) {
+      var duplicated = false
+
+      for (var k = 0; k < hints.length; k++) {
+        if (hints[k] === toAdd) {
+          duplicated = true
+          break
+        }
+      }
+
+      if (!duplicated) {
+        hints.push(toAdd)
+      } else {
+        toAdd++
+        if (toAdd > 9) {
+          toAdd = 0
+        }
+      }
+    }
+  }
 
   return {
     solution: pin,
-    hints: splitIntoNumbers(hints),
+    hints: hints,
     solutionIndex: index,
     tomorrow: nextday,
   }
