@@ -40,16 +40,15 @@ export const StatsModal = ({
         <StatBar gameStats={gameStats} />
         <p className="mt-6 italic text-sm text-gray-300">
           {localized['app.statsmodal.buymeacoffee']}
+        </p>
+        <p className="mt-6 text-sm text-gray-300">
           <a
             className="buymeacoffee"
             href="https://ko-fi.com/J3J2BUDV7"
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3"
-              alt="Buy Me a Coffee at ko-fi.com"
-            />
+            <img src="kofi3.png" alt="Buy Me a Coffee at ko-fi.com" />
           </a>
         </p>
       </BaseModal>
@@ -97,16 +96,15 @@ export const StatsModal = ({
       )}
       <p className="mt-6 italic text-sm text-gray-300">
         {localized['app.statsmodal.buymeacoffee']}
+      </p>
+      <p className="mt-6 text-sm text-gray-300">
         <a
           className="buymeacoffee"
           href="https://ko-fi.com/J3J2BUDV7"
           target="_blank"
           rel="noreferrer"
         >
-          <img
-            src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3"
-            alt="Buy Me a Coffee at ko-fi.com"
-          />
+          <img src="kofi3.png" alt="Buy Me a Coffee at ko-fi.com" />
         </a>
       </p>
     </BaseModal>

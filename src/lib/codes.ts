@@ -115,7 +115,13 @@ export const getSolutionOfDay = () => {
   let encodedTodayCharCodeList = []
 
   for (var i = 0; i < encodedToday.length; i++) {
-    encodedTodayCharCodeList.push(encodedToday.charCodeAt(i))
+    if (isNaN(+encodedToday[i])) {
+      var letterPosition = (encodedToday.charCodeAt(i) - 96).toString()
+      var lastValue = letterPosition[letterPosition.length - 1]
+      encodedTodayCharCodeList.push(lastValue)
+    } else {
+      encodedTodayCharCodeList.push(encodedToday[i])
+    }
   }
 
   const encodedTodayCharCode = encodedTodayCharCodeList.join('')

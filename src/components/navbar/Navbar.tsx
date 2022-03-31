@@ -1,4 +1,5 @@
 import {
+  CakeIcon,
   ChartBarIcon,
   CogIcon,
   QuestionMarkCircleIcon,
@@ -9,17 +10,23 @@ type Props = {
   setIsInfoModalOpen: (value: boolean) => void
   setIsStatsModalOpen: (value: boolean) => void
   setIsSettingsModalOpen: (value: boolean) => void
+  setIsSupportersModalOpen: (value: boolean) => void
 }
 
 export const Navbar = ({
   setIsInfoModalOpen,
   setIsStatsModalOpen,
   setIsSettingsModalOpen,
+  setIsSupportersModalOpen,
 }: Props) => {
   return (
     <div className="navbar">
       <div className="navbar-content px-5">
         <div className="left-icons">
+          <CakeIcon
+            className="h-6 w-6 mr-2 cursor-pointer stroke-white"
+            onClick={() => setIsSupportersModalOpen(true)}
+          />
           <QuestionMarkCircleIcon
             className="h-6 w-6 mr-2 cursor-pointer stroke-white"
             onClick={() => setIsInfoModalOpen(true)}

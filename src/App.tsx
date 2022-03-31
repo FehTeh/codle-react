@@ -28,6 +28,7 @@ import { localized } from './lib/localize'
 import { Fireworks } from 'fireworks-js/dist/react'
 import { format } from 'react-string-format'
 import { Redirect } from './components/Redirect'
+import { SupportersModal } from './components/modals/SupportersModal'
 
 function App() {
   const [lang, setLang] = useState(
@@ -43,6 +44,7 @@ function App() {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
+  const [isSupportersModalOpen, setIsSupportersModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
 
@@ -196,6 +198,7 @@ function App() {
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={setIsSettingsModalOpen}
+        setIsSupportersModalOpen={setIsSupportersModalOpen}
       />
       <Grid
         guesses={guesses}
@@ -241,6 +244,10 @@ function App() {
         handleHighContrastMode={handleHighContrastMode}
         locale={lang}
         handleLangChange={handleLangChange}
+      />
+      <SupportersModal
+        isOpen={isSupportersModalOpen}
+        handleClose={() => setIsSupportersModalOpen(false)}
       />
       <AlertContainer />
       {isGameWon && <Fireworks className="firework" />}
