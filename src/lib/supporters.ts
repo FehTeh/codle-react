@@ -3,4 +3,5 @@ export const supporters = [
   'Sandro Nilo',
   'André Amaral',
   'Marcos André',
+  'João Jesus',
 ]
