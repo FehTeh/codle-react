@@ -15,6 +15,35 @@ export const codeLength = (code: string) => {
   return splitIntoNumbers(code).length
 }
 
+export const removeDuplicated = (numbers: number[]) => {
+  let hints = [numbers[0]]
+
+  for (var j = 1; j < numbers.length; j++) {
+    let toAdd = numbers[j]
+
+    while (hints.length === j) {
+      var duplicated = false
+
+      for (var k = 0; k < hints.length; k++) {
+        if (hints[k] === toAdd) {
+          duplicated = true
+          break
+        }
+      }
+
+      if (!duplicated) {
+        hints.push(toAdd)
+      } else {
+        toAdd++
+        if (toAdd > 9) {
+          toAdd = 0
+        }
+      }
+    }
+  }
+  return hints
+}
+
 export const getHint = (position: number) => {
   let solutionSplit = splitIntoNumbers(solution)
   const positionCompare = position + 1 === MAX_CODE_LENGTH ? 0 : position + 1
@@ -40,16 +69,18 @@ export const getHint = (position: number) => {
       return format(localized['app.hint.notmultipleof'], letter, 3)
     }
     case 3: {
-      if (solutionSplit[position] % 4 === 0) {
-        return format(localized['app.hint.multipleof'], letter, 4)
+      // factorial
+      if ([1, 2, 6].includes(solutionSplit[position])) {
+        return format(localized['app.hint.factorial'], letter)
       }
-      return format(localized['app.hint.notmultipleof'], letter, 4)
+      return format(localized['app.hint.notfactorial'], letter)
     }
     case 4: {
-      if (solutionSplit[position] % 5 === 0) {
-        return format(localized['app.hint.multipleof'], letter, 5)
+      // square
+      if ([1, 4, 9].includes(solutionSplit[position])) {
+        return format(localized['app.hint.square'], letter)
       }
-      return format(localized['app.hint.notmultipleof'], letter, 5)
+      return format(localized['app.hint.notsquare'], letter)
     }
     case 5: {
       // is prime
@@ -126,40 +157,13 @@ export const getSolutionOfDay = () => {
 
   const encodedTodayCharCode = encodedTodayCharCodeList.join('')
 
-  const pin = encodedTodayCharCode.substring(0, MAX_CODE_LENGTH)
-  const possibleHints = splitIntoNumbers(
-    encodedTodayCharCode.substring(MAX_CODE_LENGTH, MAX_CODE_LENGTH * 2)
-  )
-
-  let hints = [possibleHints[0]]
-
-  for (var j = 1; j < possibleHints.length; j++) {
-    let toAdd = possibleHints[j]
-
-    while (hints.length === j) {
-      var duplicated = false
-
-      for (var k = 0; k < hints.length; k++) {
-        if (hints[k] === toAdd) {
-          duplicated = true
-          break
-        }
-      }
-
-      if (!duplicated) {
-        hints.push(toAdd)
-      } else {
-        toAdd++
-        if (toAdd > 9) {
-          toAdd = 0
-        }
-      }
-    }
-  }
-
   return {
-    solution: pin,
-    hints: hints,
+    solution: encodedTodayCharCode.substring(0, MAX_CODE_LENGTH),
+    hints: removeDuplicated(
+      splitIntoNumbers(
+        encodedTodayCharCode.substring(MAX_CODE_LENGTH, MAX_CODE_LENGTH * 2)
+      )
+    ),
     solutionIndex: index,
     tomorrow: nextday,
   }

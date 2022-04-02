@@ -19,6 +19,7 @@
 
 html {
   background-color: #41658a;
+  overflow: none;
 }
 
 .cell-cursor-animation > .letter-container {
@@ -307,4 +308,22 @@ svg.cursor-pointer:hover {
 
 *:focus {
   outline: none;
+}
+
+.carousel.carousel-slider {
+  padding-bottom: 40px;
+}
+
+.carousel .thumbs-wrapper.axis-vertical {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+  }
 }

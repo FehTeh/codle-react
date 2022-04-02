@@ -11,6 +11,10 @@
   "app.infomodal.present": "The number 5 is in the code but in the wrong spot.",
   "app.infomodal.absent": "The number 7 is not in the code in any spot.",
   "app.infomodal.neweveryday": "A new code will be available each day!",
+  "app.infomodal.perfectsquarenumbers": "Perfect squares: n^2",
+  "app.infomodal.primenumbers": "Prime numbers:",
+  "app.infomodal.factorialnumbers": "Factorial: n!",
+  "app.infomodal.fibonaccinumbers": "Fibonacci numbers:",
   "app.hintsmodal.title": "Hints",
   "app.hintsmodal.info": "These are the hints to crack the code:",
   "app.settingsmodal.title": "Settings",
@@ -40,6 +44,10 @@
   "app.hint.notprime": "{0} is not a prime number",
   "app.hint.fibonacci": "{0} is a Fibonacci number",
   "app.hint.notfibonacci": "{0} is not a Fibonnaci number",
+  "app.hint.factorial": "{0} is a factorial number",
+  "app.hint.notfactorial": "{0} is not a factorial number",
+  "app.hint.square": "{0} is a square number",
+  "app.hint.notsquare": "{0} is not a square number",
   "app.redirect.newlocation": "New website location. Now available at:",
   "app.redirect.thankyou": "Thank you!"
 }

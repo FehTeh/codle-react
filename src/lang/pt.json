@@ -11,6 +11,10 @@
   "app.infomodal.present": "O número 5 existe no codigo mas está na posição errada.",
   "app.infomodal.absent": "O número 7 não existe no codigo em nenhuma posição.",
   "app.infomodal.neweveryday": "Um novo codigo disponivel a cada dia!",
+  "app.infomodal.perfectsquarenumbers": "Quadrados perfeitos: n^2",
+  "app.infomodal.primenumbers": "Números primos:",
+  "app.infomodal.factorialnumbers": "Números fatoriais: n!",
+  "app.infomodal.fibonaccinumbers": "Números de Fibonacci:",
   "app.hintsmodal.title": "Ajudas",
   "app.hintsmodal.info": "Estas são as ajudas para desvendar o codigo:",
   "app.settingsmodal.title": "Definições",
@@ -40,6 +44,10 @@
   "app.hint.notprime": "{0} não é um número primo",
   "app.hint.fibonacci": "{0} é um número de Fibonnaci",
   "app.hint.notfibonacci": "{0} não é um número de Fibonnaci",
+  "app.hint.factorial": "{0} é um número fatorial",
+  "app.hint.notfactorial": "{0} não é um número fatorial",
+  "app.hint.square": "{0} é um número quadrado",
+  "app.hint.notsquare": "{0} não é um número quadrado",
   "app.redirect.newlocation": "Mudamos de site. Agora disponivel em:",
   "app.redirect.thankyou": "Obrigado!"
 }
