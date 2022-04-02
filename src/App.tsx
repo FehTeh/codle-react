@@ -63,9 +63,7 @@ function App() {
     }
     if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
       setIsGameLost(true)
-      showErrorAlert(format(localized['app.correctcode'], solution), {
-        persist: true,
-      })
+      showErrorAlert(format(localized['app.correctcode'], solution), {})
     }
     return loaded.guesses
   })
@@ -185,7 +183,6 @@ function App() {
         setStats(addStatsForCompletedGame(stats, guesses.length + 1))
         setIsGameLost(true)
         showErrorAlert(format(localized['app.correctcode'], solution), {
-          persist: true,
           delayMs: REVEAL_TIME_MS * MAX_CODE_LENGTH + 1,
         })
       }

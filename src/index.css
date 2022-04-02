@@ -19,7 +19,7 @@
 
 html {
   background-color: #41658a;
-  overflow: none;
+  overflow: hidden;
 }
 
 .cell-cursor-animation > .letter-container {
