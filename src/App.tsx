@@ -217,6 +217,21 @@ function App() {
         />
       )}
 
+      {(isGameWon || isGameLost) && (
+        <div className="finish-coffee">
+          <p className="flex justify-center mb-1">
+            <a
+              className="buymeacoffee"
+              href="https://ko-fi.com/J3J2BUDV7"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="kofi3.png" alt="Buy Me a Coffee at ko-fi.com" />
+            </a>
+          </p>
+        </div>
+      )}
+
       <InfoModal
         isOpen={isInfoModalOpen}
         handleClose={() => setIsInfoModalOpen(false)}

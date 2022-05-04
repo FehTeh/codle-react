@@ -122,6 +122,13 @@ svg.cursor-pointer:hover {
   right: 0;
 }
 
+.finish-coffee {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+}
+
 @keyframes revealAbsentCharCell {
   0% {
     transform: rotateX(0deg);

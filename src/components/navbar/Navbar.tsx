@@ -1,5 +1,5 @@
 import {
-  CakeIcon,
+  HeartIcon,
   ChartBarIcon,
   CogIcon,
   QuestionMarkCircleIcon,
@@ -21,15 +21,15 @@ export const Navbar = ({
 }: Props) => {
   return (
     <div className="navbar">
-      <div className="navbar-content px-5">
+      <div className="navbar-content px-5 max-w-screen-md mx-auto">
         <div className="left-icons">
-          <CakeIcon
-            className="h-6 w-6 mr-2 cursor-pointer stroke-white"
-            onClick={() => setIsSupportersModalOpen(true)}
-          />
           <QuestionMarkCircleIcon
             className="h-6 w-6 mr-2 cursor-pointer stroke-white"
             onClick={() => setIsInfoModalOpen(true)}
+          />
+          <HeartIcon
+            className="h-6 w-6 mr-2 cursor-pointer stroke-white"
+            onClick={() => setIsSupportersModalOpen(true)}
           />
         </div>
         <p className="title text-xl ml-2.5 font-bold text-white">
