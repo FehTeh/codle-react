@@ -2,6 +2,7 @@
   "name": "codle",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://FehTeh.github.io/codle-react",
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
