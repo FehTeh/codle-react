@@ -8,6 +8,10 @@
 This is based on the famous Wordle game but the objective is to find a daily code with one hint per column.
 Made using React, Typescript, and Tailwind.
 
+<p align="center">
+  <img src="docs/preview.gif" alt="LED Demo">
+</p>
+
 [**Try it!**](https://codle-react.pages.dev/)
 
 ## Build and run
